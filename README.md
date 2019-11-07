@@ -2,7 +2,7 @@
 ## Group Notes
 
 ### files
-####highway data for CS565 Cassandra project: highway_data.zip
+_ProjectDataCloud2015.zip_
 This is a zip file of highway data from Portland Oregon to be used in a exploratory implementation of the Cassandra NoSQL system.
 
 ### Google Cloud VM quirks
