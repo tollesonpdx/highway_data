@@ -58,7 +58,8 @@ JVM_OPTS="$JVM_OPTS -Djava.rmi.server.hostname=127.0.0.1:7199"
 ``` 
 systemctl restart cassandra
 ```
-[configuring Cassandra Instructions](http://cassandra.apache.org/doc/latest/getting_started/configuring.html) . 
+[configuring Cassandra Instructions](http://cassandra.apache.org/doc/latest/getting_started/configuring.html)   
+
 [configuring for local host](https://www.liquidweb.com/kb/error-failed-to-connect-to-127-0-0-17199-connection-refused-cassandra-solved/)
 
 ### How To Run
