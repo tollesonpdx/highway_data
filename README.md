@@ -66,6 +66,9 @@ systemctl restart cassandra
 You can start Cassandra with `sudo service cassandra start` and stop it with `sudo service cassandra stop`. However, normally the service will start automatically. For this reason be sure to stop it if you need to make any configuration changes.  
 - Verify that Cassandra is running by invoking nodetool status from the command line.
 - To Connect to cluster using CQLSH: `cqlsh localhost` 
+[Starting Cassandra Server](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
+
+[Starting CQLSH](http://cassandra.apache.org/doc/latest/getting_started/querying.html)
 
 ### files in repo
 _ProjectDataCloud2015.zip_
