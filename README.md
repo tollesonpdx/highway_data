@@ -2,7 +2,7 @@
 
 ### Starting a new VM instance
 - For machine, select: `g1-small (1 vCPU, 1.7 GB memory)`
-- For Boot disk, select `Ubuntu 18.04 LTS
+- For Boot disk, select `Ubuntu 18.04 LTS`
 
 
 ### Installing
