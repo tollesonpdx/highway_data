@@ -1,5 +1,4 @@
-# Mama Cass, The Solo Tour
-## Group Notes
+# Mama Cass, The Solo Tour  --  Group Notes
 
 ### files
 _ProjectDataCloud2015.zip_
