@@ -11,4 +11,5 @@ Becase the VM is using a Debian Linux OS, you need to use "sudo yum install" ins
 ### Cassandra location on Google Cloud VM
 cd ../../usr/apache-cassandra-3.11.4/
 
-
+### Source files location on Google Cloud VM
+cd ..
