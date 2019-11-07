@@ -1,12 +1,12 @@
 # Mama Cass, The Solo Tour  --  Group Notes
 
 ### To Run
-to run client:
-`cd /usr/apache-cassandra-3.11.4/`
+to run client:  
+`cd /usr/apache-cassandra-3.11.4/` 
 `./bin/cassandra`
 
-to run sqlsh: 
-`cd /usr/apache-cassandra-3.11.4/`
+to run sqlsh:   
+`cd /usr/apache-cassandra-3.11.4/`  
 `./bin/cqlsh`
 
 ### files
