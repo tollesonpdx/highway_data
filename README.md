@@ -3,8 +3,8 @@
 ### Installation
 ```
 sudo yum install java-1.8.0-openjdk.x86_64
-sudo yum install wget
-http://apache-mirror.8birdsvideo.com/cassandra/3.11.4/apache-cassandra-3.11.4-bin.tar.gz
+sudo yum install 
+wget http://apache-mirror.8birdsvideo.com/cassandra/3.11.4/apache-cassandra-3.11.4-bin.tar.gz
 tar -xzvf apache-cassandra-3.11.4-bin.tar.gz
 mv apache-cassandra-3.11.4 ./usr/
 ```
