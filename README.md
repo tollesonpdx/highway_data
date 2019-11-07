@@ -1,5 +1,12 @@
 # Mama Cass, The Solo Tour  --  Group Notes
 
+### Installation
+sudo yum install java-1.8.0-openjdk.x86_64
+sudo yum install wget
+http://apache-mirror.8birdsvideo.com/cassandra/3.11.4/apache-cassandra-3.11.4-bin.tar.gz
+tar -xzvf apache-cassandra-3.11.4-bin.tar.gz
+mv apache-cassandra-3.11.4 ./usr/
+
 ### To Run
 to run client:  
 ```
@@ -21,7 +28,7 @@ Becase the VM is using a Debian Linux OS, you need to use "sudo yum install" ins
 
 
 ### Cassandra location on Google Cloud VM
-cd ../../usr/apache-cassandra-3.11.4/
+cd /usr/apache-cassandra-3.11.4/
 
 ### Source files location on Google Cloud VM
 cd ../ProjectData-Cloud2015/
