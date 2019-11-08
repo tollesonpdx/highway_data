@@ -37,13 +37,6 @@ pip install cassandra-driver
 
 [installation instructions](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
 
-### Bugs
-Run the following command each time you start you ssh session or add it to your `.bashrc` file.
-```
-export CQLSH_NO_BUNDLED=true
-```
-[bug fix instructions](https://thelastpickle.com/blog/2016/08/16/cqlsh-broken-on-fresh-installs.html)
-
 ### Configure for LocalHost
 ```
 sudo vim /etc/cassandra/cassandra-env.sh
@@ -65,6 +58,13 @@ systemctl restart cassandra
 [configuring Cassandra Instructions](http://cassandra.apache.org/doc/latest/getting_started/configuring.html)   
 
 [configuring for local host](https://www.liquidweb.com/kb/error-failed-to-connect-to-127-0-0-17199-connection-refused-cassandra-solved/)
+
+### Bugs
+Run the following command each time you start you ssh session or add it to your `.bashrc` file.
+```
+export CQLSH_NO_BUNDLED=true
+```
+[bug fix instructions](https://thelastpickle.com/blog/2016/08/16/cqlsh-broken-on-fresh-installs.html)
 
 ### How To Run
 You can start Cassandra with `sudo service cassandra start` and stop it with `sudo service cassandra stop`. However, normally the service will start automatically. For this reason be sure to stop it if you need to make any configuration changes.  
