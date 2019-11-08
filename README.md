@@ -95,7 +95,7 @@ You can start Cassandra with `sudo service cassandra start` and stop it with `su
 ```CREATE KEYSPACE IF NOT EXISTS testcass WITH replication = {'class':'SimpleStrategy', 'replication_factor': 1};```
 
 ### cqlsh command for creating a small table. the large table will need more options set
-```CREATE TABLE IF NOT EXISTS testcass.freeway_detectors(
+`CREATE TABLE IF NOT EXISTS testcass.freeway_detectors(
   detectorid int PRIMARY KEY, 
   highwayid int, 
   milepost float, 
@@ -103,4 +103,4 @@ You can start Cassandra with `sudo service cassandra start` and stop it with `su
   detectorclass int, 
   lanenumber int, 
   stationid int
-  );```
+  );`
