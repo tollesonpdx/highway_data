@@ -86,12 +86,21 @@ You can start Cassandra with `sudo service cassandra start` and stop it with `su
 
 [Starting CQLSH](http://cassandra.apache.org/doc/latest/getting_started/querying.html)
 
-### files in repo
-_ProjectDataCloud2015.zip_
-This is a zip file of highway data from Portland Oregon to be used in a exploratory implementation of the Cassandra NoSQL system.
-
-### Google Cloud VM quirks
-Becase the VM is using a Debian Linux OS, you need to use "sudo yum install" instead of "sudo install" when installing programs on this VM. 
+ 
 
 ### Source files location on Google Cloud VM
-cd ../ProjectData-Cloud2015/
+/home/highway_data/
+
+### cqlsh command for creating a keyspace
+```CREATE KEYSPACE IF NOT EXISTS testcass WITH replication = {'class':'SimpleStrategy', 'replication_factor': 1};```
+
+### cqlsh command for creating a small table. the large table will need more options set
+```CREATE TABLE IF NOT EXISTS testcass.freeway_detectors(
+  detectorid int PRIMARY KEY, 
+  highwayid int, 
+  milepost float, 
+  locationtext text, 
+  detectorclass int, 
+  lanenumber int, 
+  stationid int
+  );```
