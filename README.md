@@ -38,6 +38,7 @@ pip install cassandra-driver
 [installation instructions](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
 
 ### Configure for LocalHost
+This only needs to be done after a fresh install.  We will probably need to change this configuration later when we transition to clusters.  
 ```
 sudo vim /etc/cassandra/cassandra-env.sh
 ```
