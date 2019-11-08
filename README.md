@@ -75,7 +75,7 @@ If you are unable to connect to the localhost, Makesure the port you or cqlsh ar
 
 Change configuration file to match port that cqlsh is using
 
-`JVM_OPTS="$JVM_OPTS -Djava.rmi.server.hostname=127.0.0.1:7199"`
+`JVM_OPTS="$JVM_OPTS -Djava.rmi.server.hostname=127.0.0.1:<port number you are trying to use>"`
 
 ### How To Run
 You can start Cassandra with `sudo service cassandra start` and stop it with `sudo service cassandra stop`. However, normally the service will start automatically. For this reason be sure to stop it if you need to make any configuration changes.  
