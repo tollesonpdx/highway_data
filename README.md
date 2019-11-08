@@ -109,3 +109,11 @@ CREATE TABLE IF NOT EXISTS testcass.freeway_detectors(
   stationid int
   );
   ```
+
+### cqlsh command for loading a csv file into an existing table - I, Chad, could not get this to work. Please let me know if you get it working.
+```
+COPY testcass.freeway_detectors(detectorid, highwayid, milepost, locationtext, detectorclass, lanenumber, stationid)
+ FROM 'freeway_detectors.csv'
+ WITH DELIMITER=','
+ AND HEADER=TRUE;
+```
