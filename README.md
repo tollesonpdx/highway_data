@@ -71,7 +71,7 @@ export CQLSH_NO_BUNDLED=true
 #### unable to connect to local host error
 If you are unable to connect to the localhost, Makesure the port you or cqlsh are using matches the port specified in the configuration file: `/etc/cassandra/cassandra-env.sh`.  You may have to change the port in the configuration file to match the port that cqlsh is trying to connect on.  I'm not sure why it changes. 
 
-[wrong port error message](./img/portBug.png)
+![wrong port error message](./img/portBug.png)
 
 ### How To Run
 You can start Cassandra with `sudo service cassandra start` and stop it with `sudo service cassandra stop`. However, normally the service will start automatically. For this reason be sure to stop it if you need to make any configuration changes.  
