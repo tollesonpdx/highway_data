@@ -92,7 +92,8 @@ You can start Cassandra with `sudo service cassandra start` and stop it with `su
 /home/highway_data/
 
 ### cqlsh command for creating a keyspace
-```CREATE KEYSPACE IF NOT EXISTS testcass 
+```
+CREATE KEYSPACE IF NOT EXISTS testcass 
   WITH replication = {'class':'SimpleStrategy', 'replication_factor': 1};
 ```
 
