@@ -30,14 +30,18 @@ sudo apt-key adv --keyserver pool.sks-keyservers.net --recv-key A278B781FE4B2BDA
 ```
 sudo apt-get install cassandra
 ```
-[installation instructions](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
-
-### Fixing Cassandra Bug
+- install cassandra-driver due to a bug with cassadra and Ubuntu
 ```
 pip install cassandra-driver
+```
+
+[installation instructions](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
+
+### Bugs
+Run the following command each time you start you ssh session or add it to your `.bashrc` file.
+```
 export CQLSH_NO_BUNDLED=true
 ```
-You may need to do the `export` command each time you start the shell unless you add it to your bash profile or bash_rc.  I can't remember where it should go.  
 [bug fix instructions](https://thelastpickle.com/blog/2016/08/16/cqlsh-broken-on-fresh-installs.html)
 
 ### Configure for LocalHost
