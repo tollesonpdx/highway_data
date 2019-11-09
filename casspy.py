@@ -1,6 +1,7 @@
 import csv
 import pycassa
 from pycassa.pool import ConnectionPool
+from pycassa.columnfamily import ColumnFamily
 
 print("welcome to the band...")
 
