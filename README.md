@@ -118,3 +118,10 @@ COPY testcass.freeway_detectors(detectorid, highwayid, milepost, locationtext, d
  AND HEADER=TRUE;
 ```
 ![failed COPY FROM csql command](img/failedCopyFrom.png)
+
+### command for installing pycassa
+```
+pip install pycassa
+```
+This should have been a one time thing only. When you log into your VM, run python and verify pycassa is installed by typing: 
+`import pycassa'
