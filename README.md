@@ -77,7 +77,7 @@ systemctl restart cassandra
 ```
 export CQLSH_NO_BUNDLED=true
 ```
-
+[Configure for pycassa](https://stackoverflow.com/questions/25056700/unable-to-connect-cassandra-with-python)
 
 ### Bugs
 Run the following command each time you start you ssh session or add it to your `.bashrc` file.
