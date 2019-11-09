@@ -117,4 +117,4 @@ COPY testcass.freeway_detectors(detectorid, highwayid, milepost, locationtext, d
  WITH DELIMITER=','
  AND HEADER=TRUE;
 ```
-![failed COPY FROM csql command](.img/failedCopyFrom.png)
+![failed COPY FROM csql command](img/failedCopyFrom.png)
