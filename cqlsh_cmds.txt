@@ -1,0 +1,16 @@
+CREATE KEYSPACE IF NOT EXISTS testcass WITH replication = {'class':'SimpleStrategy', 'replication_factor': 1};
+
+CREATE TABLE IF NOT EXISTS testcass.freeway_detectors(detectorid int PRIMARY KEY, highwayid int, milepost float, locationtext text, detectorclass int, lanenumber int, stationid int);
+
+COPY testcass.freeway_detectors(detectorid, highwayid, milepost, locationtext, detectorclass, lanenumber, stationid) FROM 'freeway_detectors.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+COPY testcass.freeway_detectors FROM 'freeway_detectors.csv' WITH DELIMITER=',' AND HEADER=TRUE;
+
+
+
+### Switching to pycassaShell and pycassa ###
+
+pycassaShell -k testcass -p 9042
+(didn't work, it was looking for IPython)
+
+
