@@ -37,7 +37,10 @@ pip install cassandra-driver
 
 [installation instructions](http://cassandra.apache.org/doc/latest/getting_started/installing.html)
 
-### Configure for LocalHost
+### Configure
+
+**Configure for local host**  
+
 This only needs to be done after a fresh install.  We will probably need to change this configuration later when we transition to clusters.  
 ```
 sudo vim /etc/cassandra/cassandra-env.sh
@@ -59,6 +62,22 @@ systemctl restart cassandra
 [configuring Cassandra Instructions](http://cassandra.apache.org/doc/latest/getting_started/configuring.html)   
 
 [configuring for local host](https://www.liquidweb.com/kb/error-failed-to-connect-to-127-0-0-17199-connection-refused-cassandra-solved/)
+
+**Unable to connect to host using pycassa** . 
+```
+sudo vi /etc/cassandra/cassandra.yaml
+```
+
+- change `start_rpc: false` to `start_rpc: true`
+
+``` 
+systemctl restart cassandra
+```
+
+```
+export CQLSH_NO_BUNDLED=true
+```
+[Configure for pycassa](https://stackoverflow.com/questions/25056700/unable-to-connect-cassandra-with-python)
 
 ### Bugs
 Run the following command each time you start you ssh session or add it to your `.bashrc` file.
