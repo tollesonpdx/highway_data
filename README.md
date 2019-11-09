@@ -125,3 +125,28 @@ pip install pycassa
 ```
 This should have been a one time thing only. When you log into your VM, run python and verify pycassa is installed by typing: 
 `import pycassa'
+
+# At this point we abandoned pycassa and switched to the modern Datastax Python driver
+The Datastax python driver can be found here [Datastax Python Driver](https://github.com/datastax/python-driver)
+
+### Steps for installing the Datastax Python Driver on the Google Cloud VM
+install the driver
+```
+pip install cassandra-driver
+```
+verify the installation
+```
+python -c 'import cassandra; print cassandra.__version__'
+```
+ensure the proper C extensions are installed
+```
+sudo apt-get install gcc python-dev
+```
+install libev for better Python asynchronus performance
+```
+sudo apt-get install libev4 libev-dev
+```
+remove old packages no longer needed
+```
+sudo apt autoremove
+```
