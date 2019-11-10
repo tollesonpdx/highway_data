@@ -14,8 +14,13 @@ print(row)
 superCol= row.get('name')
 print(superCol)
 
-col_fam.insert('Will', {'name': {'last': 'Mass'}})
+#add first name will
 col_fam.insert('Will', {'name': {'first': 'Willy'}})
 print(col_fam.get('Will'))
+
+#change first from bill to will
+col_fam.insert('Will', {'name': {'first': 'Bill'}})
+print(col_fam.get('Will'))
+
 
 #col_fam.insert('Will', {'name': {'last': 'Mass'}})
