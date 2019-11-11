@@ -14,19 +14,20 @@ with open(stationFile, 'rU') as fin:
 
 with open(detectorFile, 'rU') as fin:
     cin = csv.DictReader(fin)
+    detectorData ={}
     detectorData = [row for row in cin]
 
 with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
-    loopDatain = csv.DictReader(fin)
-    # for row in loopDatain:
+    cin = csv.DictReader(fin)
+    # for row in cin:
         # print(row)
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
     # loopData= [row for row in cin]
 
 
-print(stationData[0])
+# print(stationData[0])
 # print(detectorData[0])
 #print(loopDatain.values())
 
@@ -41,5 +42,5 @@ for station in stationData:
             {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
 
 
-
-
+print(col_fam.get('1098'))
+print('all done')
