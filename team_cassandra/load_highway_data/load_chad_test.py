@@ -20,7 +20,7 @@ with open(loopFile, 'rU') as fin:
     
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
-    #loopData= [row for row in cin]
+    loopData= [row for row in cin]
 
 
 print(stationData[0])
