@@ -24,7 +24,10 @@ with open(detectorFile, 'rU') as fin:
 with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
     cin = csv.DictReader(fin)
-    for row in cin and range(0,5):
+    it = 0
+    for row in cin:
+        print(it)
+        it++
         print(row)
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
