@@ -9,7 +9,9 @@ loopFile='/home/edeposit/ProjectData-Cloud2015/freeway_loopdata.csv'
 
 with open(stationFile, 'rU') as fin:
     cin = csv.DictReader(fin)
-    stationData= [row for row in cin]
+    for row in rows in cin:
+        print(row)
+    stationData = [row for row in cin]
 
 # with open(detectorFile, 'rU') as fin:
 #     cin = csv.DictReader(fin)
