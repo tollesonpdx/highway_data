@@ -11,13 +11,12 @@ with open(stationFile, 'rU') as fin:
     cin = csv.DictReader(fin)
     stationData = [row for row in cin]
 
-# with open(detectorFile, 'rU') as fin:
-#     cin = csv.DictReader(fin)
-#     detectorData= [row for row in cin]
+with open(detectorFile, 'rU') as fin:
+    cin = csv.DictReader(fin)
+    detectorData = [row for row in cin]
 
-
-# with open(loopFile, 'rU') as fin:
-#     loopDatain = csv.DictReader(fin, delimiter=',')
+with open(loopFile, 'rU') as fin:
+    loopDatain = csv.DictReader(fin, delimiter=',')
     
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
@@ -25,8 +24,7 @@ with open(stationFile, 'rU') as fin:
 
 
 print(stationData[0])
-print stationData[1]
-# print(detectorData[0])
+print(detectorData[0])
 #print(loopDatain.values())
 
 # pool = ConnectionPool('highwayData', ['localhost:9160'])
