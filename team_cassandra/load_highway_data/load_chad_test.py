@@ -17,7 +17,7 @@ with open(detectorFile, 'rU') as fin:
 
 with open(loopFile, 'rU') as fin:
     loopDatain = csv.DictReader(fin, delimiter=',')
-    loopDatain = csv.DictReader(fin)
+    # loopDatain = csv.DictReader(fin)
     
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
