@@ -4,22 +4,22 @@ from pycassa.columnfamily import ColumnFamily
 import csv
 
 stationFile='/home/edeposit/ProjectData-Cloud2015/freeway_stations.csv'
-detectorFile='/home/edeposit/ProjectData-Cloud2015/freeway_detectors.csv'
-loopFile='/home/edeposit/ProjectData-Cloud2015/freeway_loopdata.csv'
+# detectorFile='/home/edeposit/ProjectData-Cloud2015/freeway_detectors.csv'
+# loopFile='/home/edeposit/ProjectData-Cloud2015/freeway_loopdata.csv'
 
 with open(stationFile, 'rU') as fin:
     cin = csv.DictReader(fin)
     stationData = {}
     stationData = [row for row in cin]
 
-with open(detectorFile, 'rU') as fin:
-    cin = csv.DictReader(fin)
-    detectorData ={}
-    detectorData = [row for row in cin]
+# with open(detectorFile, 'rU') as fin:
+#     cin = csv.DictReader(fin)
+#     detectorData ={}
+#     detectorData = [row for row in cin]
 
-with open(loopFile, 'rU') as fin:
+# with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
-    cin = csv.DictReader(fin)
+    # cin = csv.DictReader(fin)
     # for row in cin:
         # print(row)
     #make each row in csv file into dictionary and catches them in list
@@ -34,8 +34,6 @@ with open(loopFile, 'rU') as fin:
 pool = ConnectionPool('highwayData', ['localhost:9160'])
 
 col_fam = ColumnFamily(pool, 'chadstation')
-
-# col_fam.insert(stationData['stationid'], {'name': {'last': 'Mass'}})
 
 for station in stationData:
     col_fam.insert(station['stationid'],
