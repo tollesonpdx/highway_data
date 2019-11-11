@@ -1,6 +1,6 @@
-#import pycassa
-#from pycassa.pool import ConnectionPool
-#from pycassa.columnfamily import ColumnFamily
+import pycassa
+from pycassa.pool import ConnectionPool
+from pycassa.columnfamily import ColumnFamily
 import csv
 
 stationFile='/home/edeposit/ProjectData-Cloud2015/freeway_stations.csv'
@@ -28,9 +28,16 @@ print(stationData[0])
 print(detectorData[0])
 #print(loopDatain.values())
 
-#pool = ConnectionPool('highWay', ['localhost:9160'])
+pool = ConnectionPool('highwayData', ['localhost:9160'])
 
-#col_fam = ColumnFamily(pool, 'stationID')
+col_fam = ColumnFamily(pool, 'stationid')
 
-#col_fam.insert('Will', {'name': {'last': 'Mass'}})
+#col_fam.insert(stationData['stationid'], {'name': {'last': 'Mass'}})
+
+for station in stationData:
+    col_fam.insert(station['stationid'],
+            {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes', 'latlon': station['latlon'], 'length':station['length']})
+
+
+
 
