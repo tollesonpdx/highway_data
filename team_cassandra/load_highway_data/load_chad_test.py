@@ -41,6 +41,6 @@ for station in stationData:
     col_fam.insert(station['stationid'],
             {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
 
-
+print('getting info for station id 1098')
 print(col_fam.get('1098'))
 print('all done')
