@@ -4,9 +4,9 @@ from pycassa.columnfamily import ColumnFamily
 import csv
 
 
-stationFile='/home/edeposit/ProjectData-Cloud2015/freeway_stations.csv'
-detectorFile='/home/edeposit/ProjectData-Cloud2015/freeway_detectors.csv'
-# loopFile='/home/edeposit/ProjectData-Cloud2015/freeway_loopdata.csv'
+stationFile='/home/highway_data/freeway_stations.csv'
+detectorFile='/home/highway_data/freeway_detectors.csv'
+loopFile='/home/highway_data/freeway_loopdata.csv'
 
 
 with open(stationFile, 'rU') as fin:
@@ -50,3 +50,4 @@ print('getting info for detector id 1810')
 print(detector_col_fam.get('1810'))
 
 print('all done')
+pool.close()
