@@ -38,7 +38,7 @@ col_fam = ColumnFamily(pool, 'chadstation')
 
 for station in stationData:
     col_fam.insert(station['stationid'],
-            {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes', 'latlon': station['latlon'], 'length':station['length']})
+            {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
 
 
 
