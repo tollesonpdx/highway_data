@@ -27,7 +27,7 @@ with open(loopFile, 'rU') as fin:
     it = 0
     for row in cin:
         print(it)
-        it++
+        it = it + 1
         print(row)
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
