@@ -47,6 +47,7 @@ print('getting info for detector id 1810')
 print(detector_col_fam.get('1810'))
 print('')
 
+print('got this far')
 loop_col_fam = ColumnFamily(pool, 'chadloops')
 for row in loopin:
     loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
