@@ -16,7 +16,7 @@ with open(detectorFile, 'rU') as fin:
     detectorData = [row for row in cin]
 
 with open(loopFile, 'rU') as fin:
-    # loopDatain = csv.DictReader(fin, delimiter=',')
+    loopDatain = csv.DictReader(fin, delimiter=',')
     loopDatain = csv.DictReader(fin)
     
     #make each row in csv file into dictionary and catches them in list
