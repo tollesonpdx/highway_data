@@ -26,14 +26,14 @@ with open(loopFile, 'rU') as fin:
 
 
 print(stationData[0])
-print(detectorData[0])
+# print(detectorData[0])
 #print(loopDatain.values())
 
-# pool = ConnectionPool('highwayData', ['localhost:9160'])
+pool = ConnectionPool('highwayData', ['localhost:9160'])
 
-# col_fam = ColumnFamily(pool, 'stationid')
+col_fam = ColumnFamily(pool, 'chadstation')
 
-#col_fam.insert(stationData['stationid'], {'name': {'last': 'Mass'}})
+col_fam.insert(stationData['stationid'], {'name': {'last': 'Mass'}})
 
 # for station in stationData:
 #     col_fam.insert(station['stationid'],
