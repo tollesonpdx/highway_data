@@ -49,6 +49,7 @@ print('')
 
 print('got this far')
 loop_col_fam = ColumnFamily(pool, 'chadloops')
+print('and here')
 for row in loopin:
     loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
             {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
