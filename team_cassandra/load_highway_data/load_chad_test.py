@@ -33,7 +33,7 @@ pool = ConnectionPool('highwayData', ['localhost:9160'])
 
 col_fam = ColumnFamily(pool, 'chadstation')
 
-col_fam.insert(stationData['stationid'], {'name': {'last': 'Mass'}})
+col_fam.insert(int(stationData['stationid']), {'name': {'last': 'Mass'}})
 
 # for station in stationData:
 #     col_fam.insert(station['stationid'],
