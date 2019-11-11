@@ -21,11 +21,11 @@ with open(detectorFile, 'rU') as fin:
     detectorData = [row for row in cin]
 # print(detectorData[0])
 
-# with open(loopFile, 'rU') as fin:
+with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
-    # cin = csv.DictReader(fin)
-    # for row in cin:
-        # print(row)
+    cin = csv.DictReader(fin)
+    for row in cin and range(0:5):
+        print(row)
     #make each row in csv file into dictionary and catches them in list
     #leads to mem overflow
     # loopData= [row for row in cin]
@@ -50,4 +50,4 @@ print('getting info for detector id 1810')
 print(detector_col_fam.get('1810'))
 
 print('all done')
-pool.close()
+# pool.close()
