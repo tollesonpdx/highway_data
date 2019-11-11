@@ -4,7 +4,7 @@ from pycassa.columnfamily import ColumnFamily
 import csv
 
 stationFile='/home/edeposit/ProjectData-Cloud2015/freeway_stations.csv'
-# detectorFile='/home/edeposit/ProjectData-Cloud2015/freeway_detectors.csv'
+detectorFile='/home/edeposit/ProjectData-Cloud2015/freeway_detectors.csv'
 # loopFile='/home/edeposit/ProjectData-Cloud2015/freeway_loopdata.csv'
 
 with open(stationFile, 'rU') as fin:
@@ -12,10 +12,10 @@ with open(stationFile, 'rU') as fin:
     stationData = {}
     stationData = [row for row in cin]
 
-# with open(detectorFile, 'rU') as fin:
-#     cin = csv.DictReader(fin)
-#     detectorData ={}
-#     detectorData = [row for row in cin]
+with open(detectorFile, 'rU') as fin:
+    cin = csv.DictReader(fin)
+    detectorData = {}
+    detectorData = [row for row in cin]
 
 # with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
@@ -33,12 +33,18 @@ with open(stationFile, 'rU') as fin:
 
 pool = ConnectionPool('highwayData', ['localhost:9160'])
 
-col_fam = ColumnFamily(pool, 'chadstation')
+station_col_fam = ColumnFamily(pool, 'chadstation')
 
 for station in stationData:
-    col_fam.insert(station['stationid'],
+    station_col_fam.insert(station['stationid'],
             {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
-
 print('getting info for station id 1098')
-print(col_fam.get('1098'))
+print(station_col_fam.get('1098'))
+
+# for det in detectorData:
+#     col_fam.insert(station['stationid'],
+#             {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
+# print('getting info for station id 1098')
+# print(col_fam.get('1098'))
+
 print('all done')
