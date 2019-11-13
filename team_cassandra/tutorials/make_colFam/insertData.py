@@ -8,4 +8,3 @@ col_fam = ColumnFamily(pool, 'cassandraGroup')
 
 
 col_fam.insert('Chad', {'middleInit': 'm', 'lastName': 'Tolleson'})
-col_fam.insert('Fake', {'middleInit':'y', 'lastName':'Tolleson'})
