@@ -19,9 +19,10 @@ col_fam.insert('Will', {'name': {'first': 'Will'}})
 print('added Will\'s first name and printing Will\'s record')
 print(col_fam.get('Will'))
 
-#change first from bill to will
+#change first from will to bill
 col_fam.insert('Will', {'name': {'first': 'Bill'}})
+print('changed Will\'s first name to Bill and printing Will\'s record')
 print(col_fam.get('Will'))
 
-
-#col_fam.insert('Will', {'name': {'last': 'Mass'}})
+#resetting Will's first name to empty
+col_fam.insert('Will', {'name': {'first': ''}})
