@@ -11,7 +11,7 @@ print('Got and printing row = will')
 print(row)
 
 superCol= row.get('name')
-print('printing the super column name for Will\'s record')
+print('printing the super column "name" for Will\'s record')
 print(superCol)
 
 #add first name will
