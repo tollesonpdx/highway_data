@@ -25,4 +25,6 @@ print('changed Will\'s first name to Bill and printing Will\'s record')
 print(col_fam.get('Will'))
 
 #resetting Will's first name to empty
+print('removeing Will\'s first name')
 col_fam.remove('Will', supercolumn='name', column='first')
+print(col_fam.get('Will'))
