@@ -25,4 +25,4 @@ print('changed Will\'s first name to Bill and printing Will\'s record')
 print(col_fam.get('Will'))
 
 #resetting Will's first name to empty
-col_fam.insert('Will', {'name': {'first': }})
+col_fam.remove('Will', {'name': {'first' }})
