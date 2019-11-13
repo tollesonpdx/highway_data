@@ -3,11 +3,9 @@ from pycassa.pool import ConnectionPool
 from pycassa.columnfamily import ColumnFamily
 import csv
 
-
 stationFile='/home/highway_data/freeway_stations.csv'
 detectorFile='/home/highway_data/freeway_detectors.csv'
 loopFile='/home/highway_data/freeway_loopdata.csv'
-
 
 with open(stationFile, 'rU') as fin:
     cin = csv.DictReader(fin)
@@ -20,12 +18,6 @@ with open(detectorFile, 'rU') as fin:
     detectorData = {}
     detectorData = [row for row in cin]
 # print(detectorData[0])
-
-with open(loopFile, 'rU') as fin:
-    # loopDatain = csv.DictReader(fin, delimiter=',')
-    loopin = csv.DictReader(fin)
-    # for row in loopin:
-        # print(row)
 
 
 
@@ -50,9 +42,14 @@ print('')
 print('got this far')
 loop_col_fam = ColumnFamily(pool, 'chadloops')
 print('and here')
-for row in loopin:
-    loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
-            {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
+with open(loopFile, 'rU') as fin:
+    # loopDatain = csv.DictReader(fin, delimiter=',')
+    loopin = csv.DictReader(fin)
+    # for row in loopin:
+        # print(row)
+    for row in loopin:
+        loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
+                {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
 print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
 print(loop_col_fam.get('1345 - 9/15/2011  12:04:00 AM'))
 print('')
