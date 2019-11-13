@@ -1,0 +1,29 @@
+SYSTEM_MANAGER.create_column_family('highwayData', 'chadstation', super=False)
+
+SYSTEM_MANAGER.drop_column_family('highwayData','chadstation')
+
+
+
+SYSTEM_MANAGER.create_column_family('highwayData', 'chaddetectors', super=False)
+
+detectorid
+highwayid
+milepost
+locationtext
+detectorclass
+lanenumber
+stationid
+
+
+
+SYSTEM_MANAGER.create_column_family('highwayData', 'chadloops', super=False)
+
+detectorid
+starttime
+volume
+speed
+occupancy
+status
+dqflags
+
+1345 - 9/15/2011  12:04:00 AM
