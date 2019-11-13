@@ -7,16 +7,16 @@ pool = ConnectionPool('superKeySpace', ['localhost:9160'])
 col_fam = ColumnFamily(pool, 'superGroup')
 
 row = col_fam.get('Will')
-print('row=will')
+print('Got and printing row = will')
 print(row)
 
 superCol= row.get('name')
-print('super column = name')
+print('printing the super column name for Will\'s record')
 print(superCol)
 
 #add first name will
 col_fam.insert('Will', {'name': {'first': 'Will'}})
-print('printing Will\'s record')
+print('added Will\'s first name and printing Will\'s record')
 print(col_fam.get('Will'))
 
 #change first from bill to will
