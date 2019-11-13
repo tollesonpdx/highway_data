@@ -26,5 +26,5 @@ print(col_fam.get('Will'))
 
 #resetting Will's first name to empty
 print('removeing Will\'s first name')
-col_fam.remove('Will', supercolumn='name', column='first')
+col_fam.remove('Will', super_column='name', column='first')
 print(col_fam.get('Will'))
