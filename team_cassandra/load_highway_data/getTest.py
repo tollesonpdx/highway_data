@@ -7,11 +7,15 @@ pool = ConnectionPool('highwayData', ['localhost:9160'])
 
 #change to not super column
 col_fam = ColumnFamily(pool, 'stationid')
+print('getting record for station 1098 from the stations column family')
+print(col_fam.get('1098'))
+print('\n\n')
 
 col_fam_detectors = ColumnFamily(pool, 'detectors')
-
-print('1345,2011-09-15 00:00:00-07,0,,0,0,0')
+print('getting record for detector 1345, 09-15-2011 from the detectors & loopdata super-column family')
+print('record check: 1345,2011-09-15 00:00:00-07,0,,0,0,0')
 print(col_fam_detectors.get('1345', columns=['2011-09-15 00:00:00-07']))
+print('\n\n')
 #print(col_fam_detectors.get('1345'))
 
 #1346,2011-09-24 21:21:20-07,7,63,11,2,0
