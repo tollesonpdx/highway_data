@@ -7,7 +7,7 @@ pool = ConnectionPool('highwayData', ['localhost:9160'])
 
 #change to not super column
 col_fam = ColumnFamily(pool, 'stationid')
-print('getting record for station 1098 from the stations column family')
+print('\n\ngetting record for station 1098 from the stations column family')
 print(col_fam.get('1098'))
 print('\n\n')
 
