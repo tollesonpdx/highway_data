@@ -13,8 +13,9 @@ print('\n\n')
 
 col_fam_detectors = ColumnFamily(pool, 'detectors')
 print('getting record for detector 1345, 09-15-2011 from the detectors & loopdata super-column family')
-print('record check: 1345,2011-09-15 00:00:00-07,0,,0,0,0')
-print(col_fam_detectors.get('1345', columns=['2011-09-15 00:00:00-07']))
+# print('record check: 1345,2011-09-15 00:00:00-07,0,,0,0,0')
+# print(col_fam_detectors.get('1345', columns=['2011-09-15 00:00:00-07']))
+print(col_fam_detectors.get('1361'))
 print('\n\n')
 #print(col_fam_detectors.get('1345'))
 
