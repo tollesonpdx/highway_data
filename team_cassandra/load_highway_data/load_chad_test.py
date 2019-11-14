@@ -45,10 +45,8 @@ print('and here')
 with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
     loopin = csv.DictReader(fin)
-    x = 0
-    for row in loopin & x<5:
+    for row in loopin:
         print(row)
-        x = x + 1
     # for row in loopin:
     #     loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
     #             {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
