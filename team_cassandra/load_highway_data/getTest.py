@@ -21,3 +21,8 @@ print('\n\n')
 #1346,2011-09-24 21:21:20-07,7,63,11,2,0
 #1348,2011-11-06 03:53:20-08,0,,0,0,0
 
+print('got this far')
+loop_col_fam = ColumnFamily(pool, 'chadloops')
+print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
+print(loop_col_fam.get('1345 - 2011-09-15 00:04:00'))
+print('all done')
