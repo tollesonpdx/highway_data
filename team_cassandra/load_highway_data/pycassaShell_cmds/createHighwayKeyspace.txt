@@ -1,3 +1,0 @@
-SYSTEM_MANAGER.create_keyspace('highwayData', strategy_options={"replication_factor": "1"})
-
-
