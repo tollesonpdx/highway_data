@@ -10,7 +10,7 @@ detectorFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detector
 loopFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
 
 superLoops_start_time = time.time()
-print('')
+print('starting to load detector loopdata supercolumn family')
 with open(detectorFile, 'rU') as fin:
     cin = csv.DictReader(fin)
     detectorData= [row for row in cin]
