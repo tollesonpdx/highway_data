@@ -21,7 +21,7 @@ station_col_fam = ColumnFamily(pool, 'stations')
 
 length=0
 for key, columns in station_col_fam.get_range():
-    print(key, columns)
+    print(key)
 # stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
 # with open(stationFile, 'rU') as fin:
 #     cin = csv.DictReader(fin)
