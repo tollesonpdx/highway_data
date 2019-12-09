@@ -1,11 +1,11 @@
 ## commands to create keyspaces
 
-SYSTEM_MANAGER.create_column_family('highwaydata', 'stations', super=False)
+SYSTEM_MANAGER.create_column_family('highwaydata', 'stations', super=False, compression=False)
 
 
 
 
-SYSTEM_MANAGER.create_column_family('highwaydata', 'detectors', super=False)
+SYSTEM_MANAGER.create_column_family('highwaydata', 'detectors', super=False, compression=False)
 
 detectorid
 highwayid

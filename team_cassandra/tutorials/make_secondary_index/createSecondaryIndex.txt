@@ -1,0 +1,7 @@
+# you must use CQLSH to create the secondary indexes
+# note that you cannot create secondary indexes on column families for which compression is used
+# compression can either be specified as false in the table creation
+# or you can turn off compression using an alter table command in CQLSH
+
+
+CREATE INDEX stat_loc_txt ON highwaydata.stations(locationtext);
