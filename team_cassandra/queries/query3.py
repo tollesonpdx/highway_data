@@ -20,7 +20,7 @@ station_col_fam = ColumnFamily(pool, 'stations')
 #     print 'key: ' + station['key'] + ', station name: ' + station['locationtext']
 
 stationids = []
-for key in station_col_fam.get_range():
+for key, columns in station_col_fam.get_range():
     stationids.append(key)
 for station in stationids:
     print(station)
