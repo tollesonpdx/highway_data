@@ -20,14 +20,15 @@ station_col_fam = ColumnFamily(pool, 'stations')
 #     print 'key: ' + station['key'] + ', station name: ' + station['locationtext']
 
 length=0
-
-stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
-with open(stationFile, 'rU') as fin:
-    cin = csv.DictReader(fin)
-    stationIDs = {}
-    stationIDs = [row['stationid'] for row in cin]
-for station in StationIDs:
-    print(station)
+for key, columns in station_col_fam.get_range():
+    print(key, columns)
+# stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
+# with open(stationFile, 'rU') as fin:
+#     cin = csv.DictReader(fin)
+#     stationIDs = {}
+#     stationIDs = [row['stationid'] for row in cin]
+# for station in StationIDs:
+#     print(station)
 
 # stationIDList = list of all station ID for stationID in stationIDList:
 # station = station_col_fam.get(stationID) if station['locationtext'] == Foster NB:
