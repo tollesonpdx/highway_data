@@ -1,3 +1,0 @@
-CREATE KEYSPACE IF NOT EXISTS testcass WITH replication = {'class':'SimpleStrategy', 'replication_factor': 1};
-
-CREATE TABLE IF NOT EXISTS testcass.freeway_detectors(detectorid int PRIMARY KEY, highwayid int, milepost float, locationtext text, detectorclass int, lanenumber int, stationid int);

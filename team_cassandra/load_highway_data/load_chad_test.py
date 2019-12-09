@@ -54,8 +54,8 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
 with open(loopFile, 'rU') as fin:
     # loopDatain = csv.DictReader(fin, delimiter=',')
     loopin = csv.DictReader(fin)
-    for row in loopin:
-        print(row)
+    # for row in loopin:
+    #     print(row)
     for row in loopin:
         loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
                 {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
