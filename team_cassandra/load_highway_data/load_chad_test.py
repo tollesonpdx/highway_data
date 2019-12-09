@@ -7,9 +7,9 @@ pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'],
 
 
 
-stationFile='~/../../home/tolleson/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
-detectorFile='~/../../home/tolleson/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detectors.csv'
-loopFile='~/../../home/tolleson/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
+stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
+detectorFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detectors.csv'
+loopFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
 
 
 
