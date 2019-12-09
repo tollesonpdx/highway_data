@@ -65,4 +65,3 @@ print("loop data took %s seconds to import" % (time.time() - loops_start_time))
 print('')
 
 print('all done')
-pool.close()
