@@ -30,6 +30,7 @@ dqflags
 
 ## DROP COLUMN FAMILY COMMANDS
 SYSTEM_MANAGER.drop_column_family('highwaydata','stations')
+SYSTEM_MANAGER.drop_column_family('highwaydata','detectors')
 
 
 ## command to get description of the keyspaces
