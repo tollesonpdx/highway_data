@@ -1,5 +1,0 @@
-pycassaShell
-
-SYSTEM_MANAGER.create_keyspace('highwayStand', strategy_options={"replication_factor": "1"})
-
-SYSTEM_MANAGER.create_column_family('highwayStand', 'stationid')

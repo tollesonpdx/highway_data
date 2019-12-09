@@ -1,1 +1,0 @@
-SYSTEM_MANAGER.create_column_family('highwayData', 'detectors', super=True)
