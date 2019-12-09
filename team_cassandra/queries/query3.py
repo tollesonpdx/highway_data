@@ -19,9 +19,11 @@ station_col_fam = ColumnFamily(pool, 'stations')
 # for key, station in station_col_fam.get_indexed_slices(clause):
 #     print 'key: ' + station['key'] + ', station name: ' + station['locationtext']
 
-length=0
-for key, columns in station_col_fam.get_range():
-    print(key)
+stationids = list(station_col_fam.get_range().get_keys())
+for station in stationids:
+    print(station)
+# for key, columns in station_col_fam.get_range():
+    
 # stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
 # with open(stationFile, 'rU') as fin:
 #     cin = csv.DictReader(fin)
