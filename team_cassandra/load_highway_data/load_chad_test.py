@@ -61,7 +61,7 @@ with open(loopFile, 'rU') as fin:
                 {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
 print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
 print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
-print(loop data took %s seconds to import" % (time.time() - loops_start_time))
+print("loop data took %s seconds to import" % (time.time() - loops_start_time))
 print('')
 
 print('all done')
