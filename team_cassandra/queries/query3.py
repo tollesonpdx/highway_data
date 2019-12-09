@@ -19,7 +19,7 @@ station_col_fam = ColumnFamily(pool, 'stations')
 # for key, station in station_col_fam.get_indexed_slices(clause):
 #     print 'key: ' + station['key'] + ', station name: ' + station['locationtext']
 
-stationids = list(station_col_fam.get_range().get_keys())
+stationids = list(station_col_fam.get_range())
 for station in stationids:
     print(station)
 # for key, columns in station_col_fam.get_range():
