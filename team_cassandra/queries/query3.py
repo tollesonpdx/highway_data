@@ -98,7 +98,7 @@ for datum in loops:
     # status = status.decode('utf-8')
     volume = int(datum['volume'])
     # volume = volume.decode('utf-8')
-    conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'status':status, 'volume':volume})
+    conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime_b, 'status':status, 'volume':volume})
 print(conv_loops)
 
 
