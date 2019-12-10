@@ -18,7 +18,7 @@ stationFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_station
 detectorFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detectors.csv'
 loopFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
 results = open('data_loading_results.txt', 'a')
-results.write('data loaded: ' + time.time())
+results.write('data loaded: ' + str(time.time()))
 print('')
 
 
