@@ -14,6 +14,7 @@ print('query 3 - getting data from Cassandra')
 station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
+timesFile = '/home/highway_data/csv_fies/2011_09_22_times.txt'
 
 fosterNBID = '' 
 fosterNBLength = 0.0 #length of station NB Foster
@@ -24,24 +25,26 @@ for key, columns in station_col_fam.get_range():
     if columns['locationtext'] == 'Foster NB':
         fosterNBID = key
         fosterNBLength = float(columns['length'])
-for row in stationids:
-    print(row)
-    print(station_col_fam.get(row))
+# for row in stationids:
+#     print(row)
+#     print(station_col_fam.get(row))
 
 detectorids = []
 for key, columns in detector_col_fam.get_range():
     if columns['stationid'] == fosterNBID:
         detectorids.append(key)
-for row in detectorids:
-    print(row)
+# for row in detectorids:
+#     print(row)
 
-##############################################################
+###############################################################
+
 #### attempt at using the indexed slice approach ####
 
 #### TESTING STATION ID VALUES AFTER APPLYING INT INDEX ###
 # print('getting info for detector id 1810')
 # print(detector_col_fam.get('1810'))
-###########################################################
+
+###############################################################
 
 # temp_dets = []
 # stat_expr = create_index_expression('stationid', 1047)
@@ -53,17 +56,20 @@ for row in detectorids:
 
 ###############################################################
 
-loops = []
+loopkeys = []
+for det in detectorids:
+    with open(timesFile, 'rU') as fin:
+        cin = csv.DictReader(fin)
+        for row in cin:
+            loopkeys.append(det + ' - ' + row)
+print(loopkeys)
+
+# loops = []
 # for key, columns in loop_col_fam.get_range():
 #     if columns['detectorid'] in detectorids:
-#     loops.append(key)
+#     loops.append(key, columns)
     
 
-# length = 0
-# for stationID in stationids:
-
-# station = station_col_fam.get(stationID) if station['locationtext'] == Foster NB:
-# length= station['length']
 
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
