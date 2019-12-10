@@ -1,7 +1,7 @@
 import pycassa
 from pycassa.pool import ConnectionPool
 from pycassa.columnfamily import ColumnFamily
-from pycassa.index import *
+# from pycassa.index import *
 import csv
 import time
 
@@ -22,12 +22,12 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
     # print(row)
     # print(station_col_fam.get(row))
 
-detectorids = []
-for key, column in detector_col_fam.get_range():
-    detectorids.append(key)
-for row in detectorids:
-    print(row)
-    print(detector_col_fam.get(row, columns=['stationid']))
+# detectorids = []
+# for key, column in detector_col_fam.get_range():
+    # detectorids.append(key)
+# for row in detectorids:
+#     print(row)
+#     print(detector_col_fam.get(row, columns=['stationid']))
 print(detector_col_fam.get('1810'))
 # temp_dets = []
 # stat_expr = create_index_expression('stationid', 1047)
