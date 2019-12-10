@@ -80,9 +80,9 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
 #     for row in loopin:
 #         loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
 #                 {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
-sys.create_index('highwaydata', 'loopdata', 'detectorid', INT_TYPE)
-sys.create_index('highwaydata', 'loopdata', 'starttime', TIME_UUID_TYPE)
-sys.create_index('highwaydata', 'loopdata', 'speed', INT_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'detectorid', INT_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'starttime', TIME_UUID_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'speed', INT_TYPE)
 print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
 print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
 loops_end_time = time.time()
