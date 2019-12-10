@@ -28,6 +28,7 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
 # for row in detectorids:
 #     print(row)
 #     print(detector_col_fam.get(row, columns=['stationid']))
+print('getting info for detector id 1810')
 print(detector_col_fam.get('1810'))
 # temp_dets = []
 # stat_expr = create_index_expression('stationid', 1047)
