@@ -12,7 +12,7 @@ query3_start_time = time.time()
 print('query 3 - getting data from Cassandra')
 
 station_col_fam = ColumnFamily(pool, 'stations')
-detector_col_fam = ColumnFamily(pol, 'detectors')
+detector_col_fam = ColumnFamily(pool, 'detectors')
 
 stationids = []
 for key, columns in station_col_fam.get_range():
