@@ -62,12 +62,12 @@ for key, columns in detector_col_fam.get_range():
 
 loopkeys = []
 for det in detectorids:
-    with open(timesFile, 'rU').read().split('\n') as fin:
+    with open(timesFile, 'rU') as fin:
         # cin = csv.reader(fin)
         for row in fin:
             print(det)
-            print(row)
-            loopkeys.append(det + ' - ' + row)
+            print( row.rstrip('\n') )
+            # loopkeys.append(det + ' - ' + row)
 print(loopkeys)
 
 # loops = []
