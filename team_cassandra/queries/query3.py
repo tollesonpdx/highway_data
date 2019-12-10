@@ -27,7 +27,7 @@ for key, column in detector_col_fam.get_range():
     detectorids.append(key)
 for row in detectorids:
     print(row)
-    print(detector_col_fam.get(row))
+    print(detector_col_fam.get(row, columns={'stationid'}))
 
 loops = []
 limit = 4
