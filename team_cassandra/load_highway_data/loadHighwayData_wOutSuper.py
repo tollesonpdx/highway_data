@@ -47,46 +47,46 @@ print('')
 
 
 
-detectors_start_time = time.time()
-print('starting detectors')
-with open(detectorFile, 'rU') as fin:
-    cin = csv.DictReader(fin)
-    detectorData = {}
-    detectorData = [row for row in cin]
+# detectors_start_time = time.time()
+# print('starting detectors')
+# with open(detectorFile, 'rU') as fin:
+#     cin = csv.DictReader(fin)
+#     detectorData = {}
+#     detectorData = [row for row in cin]
 
-sys.create_column_family('highwaydata', 'detectors', super=False, compression=False)
-detector_col_fam = ColumnFamily(pool, 'detectors')
-for det in detectorData:
-    detector_col_fam.insert(det['detectorid'],
-            {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
-sys.create_index('highwaydata', 'detectors', 'stationid', INT_TYPE)
-sys.create_index('highwaydata', 'detectors', 'locationtext', UTF8_TYPE)
-print('getting info for detector id 1810')
-print(detector_col_fam.get('1810'))
-detectors_end_time = time.time()
-results.write("detectors data took %s seconds to import" % (detectors_end_time - detectors_start_time))
-print("detectors data took %s seconds to import" % (detectors_end_time - detectors_start_time))
-print('')
+# sys.create_column_family('highwaydata', 'detectors', super=False, compression=False)
+# detector_col_fam = ColumnFamily(pool, 'detectors')
+# for det in detectorData:
+#     detector_col_fam.insert(det['detectorid'],
+#             {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
+# sys.create_index('highwaydata', 'detectors', 'stationid', INT_TYPE)
+# sys.create_index('highwaydata', 'detectors', 'locationtext', UTF8_TYPE)
+# print('getting info for detector id 1810')
+# print(detector_col_fam.get('1810'))
+# detectors_end_time = time.time()
+# results.write("detectors data took %s seconds to import" % (detectors_end_time - detectors_start_time))
+# print("detectors data took %s seconds to import" % (detectors_end_time - detectors_start_time))
+# print('')
 
 
 
 loops_start_time = time.time()
 print('starting loopdata')
-# sys.create_column_family('highwaydata', 'loopdata', super=False, compression=False)
-loop_col_fam = ColumnFamily(pool, 'loopdata')
-# with open(loopFile, 'rU') as fin:
-#     # loopDatain = csv.DictReader(fin, delimiter=',')
-#     loopin = csv.DictReader(fin)
-#     # for row in loopin:
-#     #     print(row)
-#     for row in loopin:
-#         loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
-#                 {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
-sys.create_index('highwaydata', 'loopdata', 'detectorid', INT_TYPE)
-sys.create_index('highwaydata', 'loopdata', 'starttime', UTF8_TYPE)
-sys.create_index('highwaydata', 'loopdata', 'speed', INT_TYPE)
+sys.create_column_family('highwaydata', 'loopdata_new', super=False, compression=False)
+loop_col_fam = ColumnFamily(pool, 'loopdata_new')
+with open(loopFile, 'rU') as fin:
+    # loopDatain = csv.DictReader(fin, delimiter=',')
+    loopin = csv.DictReader(fin)
+    # for row in loopin:
+    #     print(row)
+    for row in loopin:
+        loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
+                {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
+# sys.create_index('highwaydata', 'loopdata', 'detectorid', INT_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'starttime', UTF8_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'speed', INT_TYPE)
 print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
-# print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
+print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
 loops_end_time = time.time()
 results.write("loop data took %s seconds to import" % (loops_end_time - loops_start_time))
 print("loop data took %s seconds to import" % (loops_end_time - loops_start_time))
