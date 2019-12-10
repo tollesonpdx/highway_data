@@ -92,7 +92,9 @@ for datum in loops:
     starttime = datum['starttime']
     starttime_b = datetime.datetime.strptime(starttime[:-3], "%Y-%m-%d %H:%M:%S")
     status = int(datum['status'])
-    volume = int(datum['volume'])
+    volume = datum['volume']
+    if volume != '':
+            volume = int(datum['volume'])
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'starttimeb':starttime_b, 'status':status, 'volume':volume})
 # print(conv_loops)
 
