@@ -102,18 +102,18 @@ print("it took %s seconds to get data from Cassandra for query 3" % (time.time()
 begtime = datetime.datetime(2011, 9, 22, 0, 0, 0)
 endtime = begtime + datetime.timedelta(0,300)
 
-# while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
-#     totalspeed = 0
-#     totalvolume = 0
-#     for loop in conv_loops:
-#         if (loop['starttime_b'] >= begtime and loop['starttime_b'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
-#             totalspeed += (loop['speed'] * loop['volume'])
-#             totalvolume += loop['volume']
-#     avgspeed = totalspeed / totalvolume
-#     avgtraveltime = fosterNBLength / avgspeed * 3600
-#     print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + ' to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
-#     begtime = endtime
-#     endtime = begtime + datetime.timedelta(0,300)
+while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
+    totalspeed = 0
+    totalvolume = 0
+    for loop in conv_loops:
+        if (loop['starttime_b'] >= begtime and loop['starttimeb'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
+            totalspeed += (loop['speed'] * loop['volume'])
+            totalvolume += loop['volume']
+    avgspeed = totalspeed / totalvolume
+    avgtraveltime = fosterNBLength / avgspeed * 3600
+    print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + ' to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
+    begtime = endtime
+    endtime = begtime + datetime.timedelta(0,300)
 
 
 
