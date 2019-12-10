@@ -14,7 +14,7 @@ print('query 3 - getting data from Cassandra')
 station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
-timesFile = '/home/highway_data/csv_fies/2011_09_22_times.txt'
+timesFile = '/home/highway_data/csv_fies/2011_09_22_times_sample.txt'
 
 fosterNBID = '' 
 fosterNBLength = 0.0 #length of station NB Foster
@@ -29,10 +29,10 @@ for key, columns in station_col_fam.get_range():
 #     print(row)
 #     print(station_col_fam.get(row))
 
-detectorids = []
-for key, columns in detector_col_fam.get_range():
-    if columns['stationid'] == fosterNBID:
-        detectorids.append(key)
+detectorids = ['1361']
+# for key, columns in detector_col_fam.get_range():
+#     if columns['stationid'] == fosterNBID:
+#         detectorids.append(key)
 # for row in detectorids:
 #     print(row)
 
@@ -76,10 +76,25 @@ for loopkey in loopkeys:
         loops.append(newrecord)
     except:
         continue
-print(loops)
+# print(loops)
     
-
-
+conv_loops = []
+for datum in loops:
+    # var = var.decode('utf-8')
+    detectorid = datum['detectorid']
+    detectorid = detectorid.decode('utf-8')
+    dqflags = datum['dqflags']
+    dqflags = dqflags.decode('utf-8')
+    occupancy = datum['occupancy']
+    occupancy = occupancy.decode('utf-8')
+    speed = datum['speed']
+    speed = speed.decode('utf-8')
+    starttime = datum['starttime']
+    status = datum['status']
+    status = status.decode('utf-8')
+    volume = datum['volume']
+    volume = volume.decode('utf-8')
+    conv_loops.append({detectorid, dqflags, occupancy, speed, starttime, status, volume})
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
 
