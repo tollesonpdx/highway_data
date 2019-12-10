@@ -50,7 +50,9 @@ with open(detectorFile, 'rU') as fin:
 
 detector_col_fam = ColumnFamily(pool, 'detectors')
 for det in detectorData:
+    print('record')
     print(det)
+    print('transformed record')
     print({'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
     # detector_col_fam.insert(int(det['detectorid']),
     #         {'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
