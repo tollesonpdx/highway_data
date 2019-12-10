@@ -92,6 +92,7 @@ for datum in loops:
         speed = int(datum['speed'])
     # speed = speed.decode('utf-8')
     starttime = datum['starttime']
+    starttime_b = datetime(starttime)
     status = int(datum['status'])
     # status = status.decode('utf-8')
     volume = int(datum['volume'])
