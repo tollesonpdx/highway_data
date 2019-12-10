@@ -67,7 +67,7 @@ for det in detectorids:
         for row in cin:
             print(det)
             print(row)
-            loopkeys.append(det + ' - ' + row)
+            # loopkeys.append(det + ' - ' + row)
 print(loopkeys)
 
 # loops = []
