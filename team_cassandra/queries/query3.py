@@ -103,12 +103,11 @@ begtime = datetime.datetime(2011, 9, 22, 0, 0, 0)
 endtime = begtime + datetime.timedelta(0,300)
 
 while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
-    endtime = begtime + datetime.timedelta(0,300)
-
+   
     totalspeed = 0
     totalvolume = 0
     for loop in conv_loops:
-        if (loop['speed'] > 5 and loop['speed'] != ''):
+        if (loop['starttime_b'] >= begtime and loop['starttime_b'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
             totalspeed += (loop['speed'] * loop['volume'])
             totalvolume += loop['volume']
     avgspeed = totalspeed / totalvolume
@@ -116,6 +115,8 @@ while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
     print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + ' to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
 
     begtime = endtime
+    endtime = begtime + datetime.timedelta(0,300)
+
 
 
 pool.dispose()
