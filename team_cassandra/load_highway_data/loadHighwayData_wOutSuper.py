@@ -19,8 +19,7 @@ detectorFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detect
 loopFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
 results = open('data_loading_results.txt', 'a')
 results.write('\ndata loaded: ')
-current_time = time.time()
-results.write(current_time)
+results.write(str(time.ctime(int(time.time()))))
 results.write('\n')
 print('')
 
