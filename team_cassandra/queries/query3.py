@@ -109,11 +109,10 @@ while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
         if (loop['starttimeb'] >= begtime and loop['starttimeb'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
             totalspeed += (loop['speed'] * loop['volume'])
             totalvolume += loop['volume']
-    if totalvolume == 0:
-        totalvolume = 1
-    avgspeed = (totalspeed * 1.0) / (totalvolume * 1.0)
-    avgtraveltime = fosterNBLength / avgspeed * 3600
-    print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + ' to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
+    if totalvolume != 0:
+        avgspeed = (totalspeed * 1.0) / (totalvolume * 1.0)
+        avgtraveltime = fosterNBLength / avgspeed * 3600
+        print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + ' to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
     begtime = endtime
     endtime = begtime + datetime.timedelta(0,300)
 
