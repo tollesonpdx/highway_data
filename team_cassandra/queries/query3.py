@@ -95,6 +95,9 @@ for datum in loops:
     volume = datum['volume']
     # volume = volume.decode('utf-8')
     conv_loops.append({detectorid, dqflags, occupancy, speed, starttime, status, volume})
+print(conv_loops)
+
+
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
 
