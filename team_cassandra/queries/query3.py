@@ -83,7 +83,9 @@ conv_loops = []
 for datum in loops:
     detectorid = int(datum['detectorid'])
     dqflags = int(datum['dqflags'])
-    occupancy = int(datum['occupancy'])
+    occupancy = datum['occupancy']
+    if occupancy != '':
+        occupancy = int(datum['occupancy'])
     speed = datum['speed']
     if speed != '':
         speed = int(datum['speed'])
@@ -94,7 +96,8 @@ for datum in loops:
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'starttimeb':starttime_b, 'status':status, 'volume':volume})
 # print(conv_loops)
 
-print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
+extract_end_time = time.time()
+print("it took %s seconds to get data from Cassandra for query 3" % (extract_end_time - query3_start_time))
 print('NB Foster station length: ' + str(fosterNBLength) + ' miles')
 
 
@@ -116,6 +119,8 @@ while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
     begtime = endtime
     endtime = begtime + datetime.timedelta(0,300)
 
+analysis_end_time = time.time()
+print("it took %s seconds to analyze data for query 3" % (analysis_end_time - extract_end_time))
 
 
 pool.dispose()
