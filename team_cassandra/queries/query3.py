@@ -65,9 +65,9 @@ for det in detectorids:
     with open(timesFile, 'rU') as fin:
         cin = csv.reader(fin)
         for row in cin:
-            print(det)
-            print(row)
-            # loopkeys.append(det + ' - ' + row)
+            # print(det)
+            # print(row)
+            loopkeys.append(det + ' - ' + row)
 print(loopkeys)
 
 # loops = []
