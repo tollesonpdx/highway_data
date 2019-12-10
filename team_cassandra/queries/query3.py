@@ -36,6 +36,8 @@ for key, columns in detector_col_fam.get_range():
 # for row in detectorids:
 #     print(row)
 
+
+
 ###############################################################
 
 #### attempt at using the indexed slice approach ####
@@ -56,11 +58,15 @@ for key, columns in detector_col_fam.get_range():
 
 ###############################################################
 
+
+
 loopkeys = []
 for det in detectorids:
     with open(timesFile, 'rU') as fin:
         cin = csv.DictReader(fin)
         for row in cin:
+            print(det)
+            print(row)
             loopkeys.append(det + ' - ' + row)
 print(loopkeys)
 
