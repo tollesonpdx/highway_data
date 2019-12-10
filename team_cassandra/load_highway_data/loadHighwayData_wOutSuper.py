@@ -23,7 +23,7 @@ with open(stationFile, 'rU') as fin:
 
 station_col_fam = ColumnFamily(pool, 'stations')
 for station in stationData:
-    station_col_fam.insert(station['highwayid','stationid'],
+    station_col_fam.insert(station['highwayid'], station['stationid'],
             {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
 print('getting info for station id 1098')
 print(station_col_fam.get('1098'))
@@ -32,21 +32,21 @@ print('')
 
 
 
-detectors_start_time = time.time()
-with open(detectorFile, 'rU') as fin:
-    cin = csv.DictReader(fin)
-    detectorData = {}
-    detectorData = [row for row in cin]
-# print(detectorData[0])
+# detectors_start_time = time.time()
+# with open(detectorFile, 'rU') as fin:
+#     cin = csv.DictReader(fin)
+#     detectorData = {}
+#     detectorData = [row for row in cin]
+# # print(detectorData[0])
 
-detector_col_fam = ColumnFamily(pool, 'detectors')
-for det in detectorData:
-    detector_col_fam.insert(det['highwayid','stationid','detectorid',],
-            {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
-print('getting info for detector id 1810')
-print(detector_col_fam.get('1810'))
-print("detectors data took %s seconds to import" % (time.time() - detectors_start_time))
-print('')
+# detector_col_fam = ColumnFamily(pool, 'detectors')
+# for det in detectorData:
+#     detector_col_fam.insert(det['highwayid','stationid','detectorid',],
+#             {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
+# print('getting info for detector id 1810')
+# print(detector_col_fam.get('1810'))
+# print("detectors data took %s seconds to import" % (time.time() - detectors_start_time))
+# print('')
 
 
 
