@@ -84,16 +84,16 @@ for datum in loops:
     detectorid = datum['detectorid']
     # detectorid = detectorid.decode('utf-8')
     dqflags = datum['dqflags']
-    dqflags = dqflags.decode('utf-8')
+    # dqflags = dqflags.decode('utf-8')
     occupancy = datum['occupancy']
-    occupancy = occupancy.decode('utf-8')
+    # occupancy = occupancy.decode('utf-8')
     speed = datum['speed']
-    speed = speed.decode('utf-8')
+    # speed = speed.decode('utf-8')
     starttime = datum['starttime']
     status = datum['status']
-    status = status.decode('utf-8')
+    # status = status.decode('utf-8')
     volume = datum['volume']
-    volume = volume.decode('utf-8')
+    # volume = volume.decode('utf-8')
     conv_loops.append({detectorid, dqflags, occupancy, speed, starttime, status, volume})
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
