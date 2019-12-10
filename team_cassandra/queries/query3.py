@@ -105,12 +105,14 @@ endtime = begtime + datetime.timedelta(0,300)
 totalspeed = 0
 counter = 0
 for loop in conv_loops:
-    if (loop['starttime_b'] >= begtime and loop['starttime'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
+    if (loop['starttime_b'] >= begtime and loop['starttime_b'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
         totalspeed += loop['speed']
         counter += 1
 avgspeed = totalspeed / counter
 avgtraveltime = fosterNBLength / avgspeed
 print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + 'to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + avgtraveltime)
+
+begtime = endtime
 
 
 pool.dispose()
