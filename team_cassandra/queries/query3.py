@@ -95,7 +95,7 @@ for datum in loops:
 # print(conv_loops)
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
-print('segment length: ' + str(fosterNBLength))
+print('NB Foster station length: ' + str(fosterNBLength))
 
 
 # analyis starts here
