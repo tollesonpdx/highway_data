@@ -110,7 +110,7 @@ for loop in conv_loops:
         counter += 1
 avgspeed = totalspeed / counter
 avgtraveltime = fosterNBLength / avgspeed
-print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + 'to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + avgtraveltime)
+print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + 'to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
 
 begtime = endtime
 
