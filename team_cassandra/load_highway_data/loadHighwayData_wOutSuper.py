@@ -24,7 +24,7 @@ with open(stationFile, 'rU') as fin:
 station_col_fam = ColumnFamily(pool, 'stations')
 for station in stationData:
     station_col_fam.insert(station['highwayid'], station['stationid'],
-            {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
+            {'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
 print('getting info for station id 1098')
 print(station_col_fam.get('1098'))
 print("stations data took %s seconds to import" % (time.time() - stations_start_time))
