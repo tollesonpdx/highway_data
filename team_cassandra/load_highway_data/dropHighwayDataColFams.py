@@ -15,7 +15,7 @@ sys.drop_column_family('highwaydata', 'detectors')
 ### sys.drop_column_family('highwaydata', 'loopdata')
 
 
-print('dropped them like hot potatos')
+print('dropped them like hot potatoes')
 
 sys.close()
 
