@@ -103,14 +103,14 @@ begtime = datetime.datetime(2011, 9, 22, 0, 0, 0)
 endtime = begtime + datetime.timedelta(0,300)
 
 totalspeed = 0
-counter = 0
+totalvolume = 0
 for loop in conv_loops:
     if (loop['speed'] > 5 and loop['speed'] != ''):
-        totalspeed += loop['speed']
-        counter += 1
-avgspeed = totalspeed / counter
-avgtraveltime = fosterNBLength / avgspeed
-print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + 'to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
+        totalspeed += (loop['speed'] * loop['volume'])
+        totalvolume += loop['volume']
+avgspeed = totalspeed / totalvolume
+avgtraveltime = fosterNBLength / avgspeed * 3600
+print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + ' to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + str(avgtraveltime))
 
 begtime = endtime
 
