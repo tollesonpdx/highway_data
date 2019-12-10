@@ -51,8 +51,8 @@ with open(detectorFile, 'rU') as fin:
 detector_col_fam = ColumnFamily(pool, 'detectors')
 for det in detectorData:
     print(det)
-    print(int(det['detectorid']),{'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
-    detector_col_fam.insert(int(det['detectorid']),{'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
+    print((det['detectorid']),{'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
+    detector_col_fam.insert((det['detectorid']),{'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
 # sys.create_index('highwaydata', 'detectors', 'stationid', INT_TYPE)
 # sys.create_index('highwaydata', 'detectors', 'locationtext', UTF8_TYPE)
 print('getting info for detector id 1810')
