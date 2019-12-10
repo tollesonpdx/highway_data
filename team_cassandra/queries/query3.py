@@ -18,15 +18,16 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
-for row in stationids:
-    print(row)
-    print(station_col_fam.get(row))
+# for row in stationids:
+    # print(row)
+    # print(station_col_fam.get(row))
 
 detectorids = []
 for key, column in detector_col_fam.get_range():
     detectorids.append(key)
-# for row in detectorids:
-        # print(row)
+for row in detectorids:
+    print(row)
+    print(detector_col_fam.get(row))
 
 loops = []
 limit = 4
