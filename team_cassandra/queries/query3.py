@@ -28,8 +28,12 @@ for key, column in detector_col_fam.get_range():
 for row in detectorids:
     print(row)
     print(detector_col_fam.get(row, columns=['stationid']))
-temp_stats = [detector_col_fam.get('1047')]
-print(temp_stats)
+temp_dets = []
+stat_expr = create_index_expression('stationid', '1047')
+clause = create_index_clause([stat_expr])
+for key, row in detectors.get_indexed_slices(clause):
+    temp_dets.append(row)
+print(temp_dets)
 
 
 loops = []
