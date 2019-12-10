@@ -1,0 +1,9 @@
+
+data loaded: Tue Dec 10 15:40:09 2019
+detectors data took 1.88818907738 seconds to import
+data loaded: Tue Dec 10 15:44:16 2019
+
+data loaded: Tue Dec 10 15:44:23 2019
+
+data loaded: Tue Dec 10 15:44:30 2019
+detectors data took 0.626669168472 seconds to import
