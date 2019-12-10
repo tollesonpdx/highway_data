@@ -32,7 +32,7 @@ limit = 4
 counter = 0
 for key, column in loop_col_fam.get_range():
     loops.append(key)
-    counter++
+    counter += 1
     if counter == limit:
         break
 
