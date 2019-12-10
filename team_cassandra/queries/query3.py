@@ -92,7 +92,7 @@ for datum in loops:
     status = int(datum['status'])
     volume = int(datum['volume'])
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'starttimeb':starttime_b, 'status':status, 'volume':volume})
-# print(conv_loops)
+print(conv_loops)
 
 
 
