@@ -18,7 +18,9 @@ stationFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_station
 detectorFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detectors.csv'
 loopFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
 results = open('data_loading_results.txt', 'a')
-results.write('data loaded: ' + str(time.time()))
+results.write('\ndata loaded: ')
+results.write(time.time())
+results.write('\n')
 print('')
 
 
@@ -81,10 +83,10 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
 #         loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
 #                 {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
 sys.create_index('highwaydata', 'loopdata', 'detectorid', INT_TYPE)
-sys.create_index('highwaydata', 'loopdata', 'starttime', TIME_UUID_TYPE)
+sys.create_index('highwaydata', 'loopdata', 'starttime', UTF8_TYPE)
 sys.create_index('highwaydata', 'loopdata', 'speed', INT_TYPE)
 print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
-# print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
+print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
 loops_end_time = time.time()
 results.write("loop data took %s seconds to import" % (loops_end_time - loops_start_time))
 print("loop data took %s seconds to import" % (loops_end_time - loops_start_time))

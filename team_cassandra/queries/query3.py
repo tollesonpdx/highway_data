@@ -17,14 +17,14 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
-# for row in stationids:
-#     print(row)
+for row in stationids:
+    print(row)
 
 detectorids = []
 for key, column in detector_col_fam.get_range():
     detectorids.append(key)
-# for row in detectorids:
-#         print(row)
+for row in detectorids:
+        print(row)
 
 length = 0
 # for stationID in stationids:
