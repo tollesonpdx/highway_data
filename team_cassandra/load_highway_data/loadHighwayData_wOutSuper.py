@@ -8,8 +8,9 @@ import time
 sys = SystemManager('10.138.0.5:9160')
 pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
 
-# sys.drop_column_family('highwaydata', 'stations')
-# sys.drop_column_family('highwaydata', 'detectors')
+print('dropping old tables')
+sys.drop_column_family('highwaydata', 'stations')
+sys.drop_column_family('highwaydata', 'detectors')
 
 stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
 detectorFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detectors.csv'
@@ -19,6 +20,7 @@ print('')
 
 
 stations_start_time = time.time()
+print('starting stations')
 with open(stationFile, 'rU') as fin:
     cin = csv.DictReader(fin)
     stationData = {}
@@ -38,6 +40,7 @@ print('')
 
 
 detectors_start_time = time.time()
+print('starting detectors')
 with open(detectorFile, 'rU') as fin:
     cin = csv.DictReader(fin)
     detectorData = {}
@@ -48,9 +51,8 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 for det in detectorData:
     detector_col_fam.insert(det['detectorid'],
             {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
-sys.create_index('highwaydata', 'detectors', 'stationid', UTF8_TYPE)
+sys.create_index('highwaydata', 'detectors', 'stationid', INT_TYPE)
 sys.create_index('highwaydata', 'detectors', 'locationtext', UTF8_TYPE)
-sys.create_index('highwaydata', 'detectors', 'speed', UTF8_TYPE)
 print('getting info for detector id 1810')
 print(detector_col_fam.get('1810'))
 print("detectors data took %s seconds to import" % (time.time() - detectors_start_time))
@@ -60,6 +62,7 @@ print('')
 
 # loops_start_time = time.time()
 # print('startig loopdata')
+# sys.create_column_family('highwaydata', 'loopdata', super=False, compression=False)
 # loop_col_fam = ColumnFamily(pool, 'loopdata')
 # with open(loopFile, 'rU') as fin:
 #     # loopDatain = csv.DictReader(fin, delimiter=',')
@@ -69,6 +72,9 @@ print('')
 #     for row in loopin:
 #         loop_col_fam.insert((row['detectorid'] + ' - ' + row['starttime']),
 #                 {'detectorid': row['detectorid'], 'starttime':row['starttime'], 'volume':row['volume'], 'speed':row['speed'],'occupancy':row['occupancy'], 'status':row['status'], 'dqflags':row['dqflags']})
+# sys.create_index('highwaydata', 'loopdata', 'detectorid', INT_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'starttime', TIME_UUID_TYPE)
+# sys.create_index('highwaydata', 'loopdata', 'speed', INT_TYPE)
 # print('getting info for detector & starttime 1345 - 9/15/2011  12:04:00 AM')
 # print(loop_col_fam.get('1345 - 2011-09-15 00:04:00-07'))
 # print("loop data took %s seconds to import" % (time.time() - loops_start_time))
@@ -76,4 +82,5 @@ print('')
 
 
 sys.close()
+pool.dispose()
 print('all done')
