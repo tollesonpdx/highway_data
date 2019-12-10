@@ -10,30 +10,25 @@ pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'],
 
 query3_start_time = time.time()
 print('query 3 - getting data from Cassandra')
-station_col_fam = ColumnFamily(pool, 'stations')
 
-# ATTEMPT TO USE A SECONDARY INDEX TO GET THE STATION ID, NOT CURRENTLY WORKING DUE TO COMPRESSION ON TABLE 
-# PREVENTING SECONDARY INDEXS
-# fosterNB_exp = create_index_expression('locationtext','Foster NB')
-# clause = create_index_clause([fosterNB_exp])
-# for key, station in station_col_fam.get_indexed_slices(clause):
-#     print 'key: ' + station['key'] + ', station name: ' + station['locationtext']
+station_col_fam = ColumnFamily(pool, 'stations')
+detector_col_fam = ColumnFamily(pol, 'detectors')
 
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
-for station in stationids:
-    print(station)
+# for row in stationids:
+#     print(row)
 
-# stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
-# with open(stationFile, 'rU') as fin:
-#     cin = csv.DictReader(fin)
-#     stationIDs = {}
-#     stationIDs = [row['stationid'] for row in cin]
-# for station in StationIDs:
-#     print(station)
+detectorids = []
+for key, column in detector_col_fam.get_range():
+    detectorids.append(key)
+for row in detectorids:
+        print(row)
 
-# stationIDList = list of all station ID for stationID in stationIDList:
+length = 0
+for stationID in stationids:
+
 # station = station_col_fam.get(stationID) if station['locationtext'] == Foster NB:
 # length= station['length']
 
