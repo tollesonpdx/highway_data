@@ -21,7 +21,7 @@ length = 0 #length of station NB Foster
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
-    print(key +"=>"+columns)
+    print(key, columns)
 # for row in stationids:
     # print(row)
     # print(station_col_fam.get(row))
