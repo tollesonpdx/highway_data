@@ -13,7 +13,7 @@ print('query 3 - getting data from Cassandra')
 
 station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
-loop_col_fam = ColumnFamily(pool, 'loopdata')
+loop_col_fam = ColumnFamily(pool, 'loopdata_new')  #loopdata_new
 timesFile = '/home/highway_data/csv_fies/2011_09_22_times_sample.txt'
 
 fosterNBID = '' 
