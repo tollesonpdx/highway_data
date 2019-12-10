@@ -68,12 +68,12 @@ for det in detectorids:
             newkey = ( det + ' - ' + row.rstrip('\n') )
             print(newkey)
             loopkeys.append( newkey )
-print(loopkeys)
+# print(loopkeys)
 
-# loops = []
-# for key, columns in loop_col_fam.get_range():
-#     if columns['detectorid'] in detectorids:
-#     loops.append(key, columns)
+loops = []
+for loopkey in loopkeys:
+    loops.append(loop_col_fam.get(loopkey))
+print(loops)
     
 
 
