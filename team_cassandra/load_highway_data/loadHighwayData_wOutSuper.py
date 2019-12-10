@@ -101,3 +101,8 @@ results.close()
 sys.close()
 pool.dispose()
 print('all done')
+
+pool2 = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
+detector_col_fam2 = ColumnFamily(pool2, 'detectors')
+print(detector_col_fam2.get('1810'))
+pool2.dispose()
