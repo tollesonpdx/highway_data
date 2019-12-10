@@ -8,7 +8,6 @@ import time
 sys = SystemManager('10.138.0.5:9160')
 pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
 
-sys.describe_keyspace('highwaydata')
 # sys.drop_column_family('highwaydata', 'stations')
 # sys.drop_column_family('highwaydata', 'detectors')
 
