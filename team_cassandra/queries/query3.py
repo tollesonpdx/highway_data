@@ -88,7 +88,7 @@ for datum in loops:
     if speed != '':
         speed = int(datum['speed'])
     starttime = datum['starttime']
-    starttime_b = datetime.strptime(starttime[:-3], "%Y-%m-%d %H:%M:%S")
+    starttime_b = datetime.datetime.strptime(starttime[:-3], "%Y-%m-%d %H:%M:%S")
     status = int(datum['status'])
     volume = int(datum['volume'])
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'starttimeb':starttime_b, 'status':status, 'volume':volume})
