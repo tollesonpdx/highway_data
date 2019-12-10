@@ -27,7 +27,6 @@ print('')
 #     stationData = {}
 #     stationData = [row for row in cin]
 
-# sys.create_column_family('highwaydata', 'stations', super=False, compression=False)
 # station_col_fam = ColumnFamily(pool, 'stations')
 # for station in stationData:
 #     station_col_fam.insert(station['stationid'],
@@ -49,7 +48,6 @@ with open(detectorFile, 'rU') as fin:
     detectorData = {}
     detectorData = [row for row in cin]
 
-sys.create_column_family('highwaydata', 'detectors', super=False, compression=False)
 detector_col_fam = ColumnFamily(pool, 'detectors')
 for det in detectorData:
     print(det)
@@ -78,7 +76,6 @@ print('')
 
 # loops_start_time = time.time()
 # print('starting loopdata')
-# sys.create_column_family('highwaydata', 'loopdata_new', super=False, compression=False)
 # loop_col_fam = ColumnFamily(pool, 'loopdata_new')
 # with open(loopFile, 'rU') as fin:
 #     # loopDatain = csv.DictReader(fin, delimiter=',')
