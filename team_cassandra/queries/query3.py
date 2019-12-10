@@ -26,7 +26,7 @@ for key, columns in station_col_fam.get_range():
         print(columns['locationtext'])
         print(columns['length'])
         fosterNBID = key
-        fosterNBlength = columns['length']
+        fosterNBLength = columns['length']
 # for row in stationids:
     # print(row)
     # print(station_col_fam.get(row))
