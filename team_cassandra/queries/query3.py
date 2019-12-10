@@ -4,7 +4,7 @@ from pycassa.columnfamily import ColumnFamily
 from pycassa.index import *
 import csv
 import time
-# from datetime import datetime
+import datetime
 
 pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
 
