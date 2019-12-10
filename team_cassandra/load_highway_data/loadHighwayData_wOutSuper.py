@@ -9,9 +9,9 @@ sys = SystemManager('10.138.0.5:9160')
 pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
 
 # BE CAREFUL UNCOMMENTING THESE LINES
-print('dropping old tables')
+### print('dropping old tables')
 ### sys.drop_column_family('highwaydata', 'stations')
-sys.drop_column_family('highwaydata', 'detectors')
+### sys.drop_column_family('highwaydata', 'detectors')
 ### sys.drop_column_family('highwaydata', 'loopdata')
 
 stationFile = '/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
