@@ -99,7 +99,7 @@ print("it took %s seconds to get data from Cassandra for query 3" % (time.time()
 
 
 # analyis starts here
-begtime = datetime(2011, 9, 22, 0, 0, 0)
+begtime = datetime.datetime(2011, 9, 22, 0, 0, 0)
 endtime = begtime + datetime.timedelta(0,300)
 print('begtime: '+begtime)
 print('endtime: '+endtime)
