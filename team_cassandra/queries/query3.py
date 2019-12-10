@@ -15,7 +15,7 @@ print('query 3 - getting data from Cassandra')
 station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata_new')  #loopdata_new
-timesFile = '/home/highway_data/csv_fies/2011_09_22_times_sample.txt'
+timesFile = '/home/highway_data/csv_fies/2011_09_22_times.txt'
 
 fosterNBID = '' 
 fosterNBLength = 0.0 #length of station NB Foster
@@ -95,7 +95,7 @@ for datum in loops:
 # print(conv_loops)
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
-print('NB Foster station length: ' + str(fosterNBLength))
+print('NB Foster station length: ' + str(fosterNBLength) + ' miles')
 
 
 # analyis starts here
