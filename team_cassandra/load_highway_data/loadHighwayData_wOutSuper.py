@@ -24,7 +24,7 @@ with open(stationFile, 'rU') as fin:
     stationData = [row for row in cin]
 # print(stationData[0])
 
-sys.create_column_family('highwaydata', 'stations', super=FALSE, compression=FALSE)
+sys.create_column_family('highwaydata', 'stations', super=False, compression=False)
 station_col_fam = ColumnFamily(pool, 'stations')
 for station in stationData:
     station_col_fam.insert(station['stationid'],
