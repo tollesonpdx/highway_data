@@ -32,15 +32,17 @@ detectorids = []
 for key, columns in detector_col_fam.get_range():
     if columns['stationid'] == fosterNBID:
         detectorids.append(key)
-for row in detectorids:
-    print(row)
-    print(detector_col_fam.get(row))
+# for row in detectorids:
+    # print(row)
+
+##############################################################
+#### attempt at using the indexed slice approach ####
+
+#### TESTING STATION ID VALUES AFTER APPLYING INT INDEX ###
 # print('getting info for detector id 1810')
 # print(detector_col_fam.get('1810'))
+###########################################################
 
-#####################################################
-#### attempt at using the indexed slice approach ####
-#####################################################
 # temp_dets = []
 # stat_expr = create_index_expression('stationid', 1047)
 # clause = create_index_clause([stat_expr])
@@ -49,8 +51,9 @@ for row in detectorids:
 # print("temp dets are: ")
 # print(temp_dets)
 
+###############################################################
 
-# loops = []
+loops = []
 # limit = 4
 # counter = 0
 # for key, column in loop_col_fam.get_range():
