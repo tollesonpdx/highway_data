@@ -22,23 +22,19 @@ stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
     if columns['locationtext'] == 'Foster NB':
-        print('MATCHED!')
-        print(columns['locationtext'])
-        print(columns['length'])
         fosterNBID = key
         fosterNBLength = columns['length']
 # for row in stationids:
     # print(row)
     # print(station_col_fam.get(row))
-print(fosterNBID)
-print(fosterNBLength)
 
 detectorids = []
-for key, column in detector_col_fam.get_range():
-    detectorids.append(key)
-# for row in detectorids:
-#     print(row)
-#     print(detector_col_fam.get(row, columns=['stationid']))
+for key, columns in detector_col_fam.get_range():
+    if columns['stationid'] == fosterNBID:
+        detectorids.append(key)
+for row in detectorids:
+    print(row)
+    print(detector_col_fam.get(row))
 # print('getting info for detector id 1810')
 # print(detector_col_fam.get('1810'))
 
