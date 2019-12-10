@@ -33,7 +33,7 @@ stat_expr = create_index_expression('stationid', 1047)
 clause = create_index_clause([stat_expr])
 for key, row in detector_col_fam.get_indexed_slices(clause):
     temp_dets.append(row)
-print(temp_dets)
+print("temp dets are: " + temp_dets)
 
 
 loops = []
