@@ -1,7 +1,7 @@
 import pycassa
 from pycassa.pool import ConnectionPool
 from pycassa.columnfamily import ColumnFamily
-# from pycassa.index import *
+from pycassa.index import *
 import csv
 import time
 
@@ -15,21 +15,29 @@ station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
 
-# stationids = []
-# for key, columns in station_col_fam.get_range():
-    # stationids.append(key)
+
+length = 0 #length of station NB Foster
+
+stationids = []
+for key, columns in station_col_fam.get_range():
+    stationids.append(key)
+    print(key +"=>"+columns)
 # for row in stationids:
     # print(row)
     # print(station_col_fam.get(row))
 
-# detectorids = []
-# for key, column in detector_col_fam.get_range():
-    # detectorids.append(key)
+detectorids = []
+for key, column in detector_col_fam.get_range():
+    detectorids.append(key)
 # for row in detectorids:
 #     print(row)
 #     print(detector_col_fam.get(row, columns=['stationid']))
-print('getting info for detector id 1810')
-print(detector_col_fam.get('1810'))
+# print('getting info for detector id 1810')
+# print(detector_col_fam.get('1810'))
+
+#####################################################
+#### attempt at using the indexed slice approach ####
+#####################################################
 # temp_dets = []
 # stat_expr = create_index_expression('stationid', 1047)
 # clause = create_index_clause([stat_expr])
