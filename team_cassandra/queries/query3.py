@@ -94,14 +94,15 @@ for datum in loops:
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'starttimeb':starttime_b, 'status':status, 'volume':volume})
 print(conv_loops)
 
-
-
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
 
 
 
 # analyis starts here
-
+begtime = datetime.datetime(2011, 9, 22, 0, 0, 0)
+endtime = begtime + datetime.timedelta(0,300)
+print('begtime: '+begtime)
+print('endtime: '+endtime)
 
 
 pool.dispose()
