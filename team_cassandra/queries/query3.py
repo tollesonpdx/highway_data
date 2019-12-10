@@ -27,7 +27,7 @@ for row in detectorids:
         print(row)
 
 length = 0
-for stationID in stationids:
+# for stationID in stationids:
 
 # station = station_col_fam.get(stationID) if station['locationtext'] == Foster NB:
 # length= station['length']
