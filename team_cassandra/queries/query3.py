@@ -81,18 +81,18 @@ for loopkey in loopkeys:
 conv_loops = []
 for datum in loops:
     # var = var.decode('utf-8')
-    detectorid = datum['detectorid']
+    detectorid = int(datum['detectorid'])
     # detectorid = detectorid.decode('utf-8')
-    dqflags = datum['dqflags']
+    dqflags = int(datum['dqflags'])
     # dqflags = dqflags.decode('utf-8')
-    occupancy = datum['occupancy']
+    occupancy = int(datum['occupancy'])
     # occupancy = occupancy.decode('utf-8')
-    speed = datum['speed']
+    speed = int(datum['speed'])
     # speed = speed.decode('utf-8')
     starttime = datum['starttime']
-    status = datum['status']
+    status = int(datum['status'])
     # status = status.decode('utf-8')
-    volume = datum['volume']
+    volume = int(datum['volume'])
     # volume = volume.decode('utf-8')
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'status':status, 'volume':volume})
 print(conv_loops)
