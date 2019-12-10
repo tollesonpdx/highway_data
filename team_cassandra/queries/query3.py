@@ -18,8 +18,9 @@ loop_col_fam = ColumnFamily(pool, 'loopdata')
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
-# for row in stationids:
-    # print(row)
+for row in stationids:
+    print(row)
+    print(station_col_fam.get(row)
 
 detectorids = []
 for key, column in detector_col_fam.get_range():
@@ -30,11 +31,11 @@ for key, column in detector_col_fam.get_range():
 loops = []
 limit = 4
 counter = 0
-for key, column in loop_col_fam.get_range():
-    loops.append(key)
-    counter += 1
-    if counter == limit:
-        break
+# for key, column in loop_col_fam.get_range():
+#     loops.append(key)
+#     counter += 1
+#     if counter == limit:
+#         break
 
 length = 0
 # for stationID in stationids:
