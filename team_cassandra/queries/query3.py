@@ -41,5 +41,5 @@ print('')
 
 
 
-
+pool.dispose()
 print('all done')
