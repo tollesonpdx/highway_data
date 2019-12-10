@@ -15,9 +15,9 @@ station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
 
-stationids = []
-for key, columns in station_col_fam.get_range():
-    stationids.append(key)
+# stationids = []
+# for key, columns in station_col_fam.get_range():
+    # stationids.append(key)
 # for row in stationids:
     # print(row)
     # print(station_col_fam.get(row))
@@ -37,16 +37,16 @@ print("temp dets are: ")
 print(temp_dets)
 
 
-loops = []
-limit = 4
-counter = 0
+# loops = []
+# limit = 4
+# counter = 0
 # for key, column in loop_col_fam.get_range():
 #     loops.append(key)
 #     counter += 1
 #     if counter == limit:
 #         break
 
-length = 0
+# length = 0
 # for stationID in stationids:
 
 # station = station_col_fam.get(stationID) if station['locationtext'] == Foster NB:
