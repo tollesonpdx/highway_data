@@ -59,9 +59,11 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 for det in detectorData:
     detector_col_fam.insert(det['detectorid'],
             {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
-sys.create_index('highwaydata', 'detectors', 'stationid', UTF8_TYPE)
+sys.create_index('highwaydata', 'detectors', 'stationid', INT_TYPE)
 sys.create_index('highwaydata', 'detectors', 'locationtext', UTF8_TYPE)
 print('getting info for detector id 1810')
+print(detector_col_fam.get('1810'))
+time.sleep(2)
 print(detector_col_fam.get('1810'))
 detectors_end_time = time.time()
 results.write("detectors data took %s seconds to import" % (detectors_end_time - detectors_start_time))
