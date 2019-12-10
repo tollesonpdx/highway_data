@@ -1,9 +1,11 @@
 import pycassa
 from pycassa.pool import ConnectionPool
 from pycassa.columnfamily import ColumnFamily
+from pycassa.system_manager import *
 import csv
 import time
 
+sys = SystemManager('10.138.0.5:9160')
 pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
 
 
@@ -11,6 +13,7 @@ pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'],
 stationFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_stations.csv'
 detectorFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_detectors.csv'
 loopFile='/home/highway_data/csv_fies/ProjectData-Cloud2015/freeway_loopdata.csv'
+
 
 
 stations_start_time = time.time()
@@ -21,10 +24,12 @@ with open(stationFile, 'rU') as fin:
     stationData = [row for row in cin]
 # print(stationData[0])
 
+sys.create_column_family('highwaydata', 'stations', super=FALSE, compression=FALSE)
 station_col_fam = ColumnFamily(pool, 'stations')
 for station in stationData:
     station_col_fam.insert(station['stationid'],
             {'highwayid': station['highwayid'], 'milepost':station['milepost'], 'locationtext':station['locationtext'], 'upstream':station['upstream'],'downstream':station['downstream'], 'stationclass':station['stationclass'], 'numberlanes':station['numberlanes'], 'latlon': station['latlon'], 'length':station['length']})
+sys.create_index('highwaydata', 'stations', 'locationtext', UTF8_TYPE)
 print('getting info for station id 1098')
 print(station_col_fam.get('1098'))
 print("stations data took %s seconds to import" % (time.time() - stations_start_time))
@@ -66,4 +71,6 @@ print('')
 # print("loop data took %s seconds to import" % (time.time() - loops_start_time))
 # print('')
 
+
+sys.close()
 print('all done')
