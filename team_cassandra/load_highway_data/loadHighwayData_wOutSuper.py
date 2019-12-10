@@ -69,9 +69,9 @@ print('')
 
 
 loops_start_time = time.time()
-print('startig loopdata')
+print('starting loopdata')
 # sys.create_column_family('highwaydata', 'loopdata', super=False, compression=False)
-# loop_col_fam = ColumnFamily(pool, 'loopdata')
+loop_col_fam = ColumnFamily(pool, 'loopdata')
 # with open(loopFile, 'rU') as fin:
 #     # loopDatain = csv.DictReader(fin, delimiter=',')
 #     loopin = csv.DictReader(fin)
