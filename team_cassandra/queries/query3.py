@@ -16,14 +16,14 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
 
 fosterNBID = '' 
-fosterNBLength = 0 #length of station NB Foster
+fosterNBLength = 0.0 #length of station NB Foster
 
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
     if columns['locationtext'] == 'Foster NB':
         fosterNBID = key
-        fosterNBLength = int(columns['length'])
+        fosterNBLength = float(columns['length'])
 for row in stationids:
     print(row)
     print(station_col_fam.get(row))
