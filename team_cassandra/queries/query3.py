@@ -28,6 +28,9 @@ for key, column in detector_col_fam.get_range():
 for row in detectorids:
     print(row)
     print(detector_col_fam.get(row, columns=['stationid']))
+temp_stats = [detector_col_fam.get(1047)]
+print(temp_stats)
+
 
 loops = []
 limit = 4
