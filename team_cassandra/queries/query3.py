@@ -30,10 +30,10 @@ for key, columns in station_col_fam.get_range():
 #     print(row)
 #     print(station_col_fam.get(row))
 
-detectorids = ['1361']
-# for key, columns in detector_col_fam.get_range():
-#     if columns['stationid'] == fosterNBID:
-#         detectorids.append(key)
+detectorids = []
+for key, columns in detector_col_fam.get_range():
+    if columns['stationid'] == fosterNBID:
+        detectorids.append(key)
 # for row in detectorids:
 #     print(row)
 
@@ -92,7 +92,7 @@ for datum in loops:
     status = int(datum['status'])
     volume = int(datum['volume'])
     conv_loops.append({'detectorid':detectorid, 'dqflags':dqflags, 'occupancy':occupancy, 'speed':speed, 'starttime':starttime, 'starttimeb':starttime_b, 'status':status, 'volume':volume})
-print(conv_loops)
+# print(conv_loops)
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
 
