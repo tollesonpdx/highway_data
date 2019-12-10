@@ -101,10 +101,16 @@ print("it took %s seconds to get data from Cassandra for query 3" % (time.time()
 # analyis starts here
 begtime = datetime.datetime(2011, 9, 22, 0, 0, 0)
 endtime = begtime + datetime.timedelta(0,300)
-print('begtime:')
-print(begtime)
-print('endtime:')
-print(endtime)
+
+totalspeed = 0
+counter = 0
+for loop in conv_loops:
+    if (loop['starttime_b'] >= begtime and loop['starttime'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
+        totalspeed += loop['speed']
+        counter += 1
+avgspeed = totalspeed / counter
+avgtraveltime = fosterNBLength / avgspeed
+print('average travel time from ' + begtime.strftime("%Y-%m-%d %H:%M:%S") + 'to ' + endtime.strftime("%Y-%m-%d %H:%M:%S") + ' is ' + avgtraveltime)
 
 
 pool.dispose()
