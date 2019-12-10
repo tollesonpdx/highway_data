@@ -82,7 +82,7 @@ conv_loops = []
 for datum in loops:
     # var = var.decode('utf-8')
     detectorid = datum['detectorid']
-    detectorid = detectorid.decode('utf-8')
+    # detectorid = detectorid.decode('utf-8')
     dqflags = datum['dqflags']
     dqflags = dqflags.decode('utf-8')
     occupancy = datum['occupancy']
