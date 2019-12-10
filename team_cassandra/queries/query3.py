@@ -16,7 +16,7 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
 
 fosterNBID = '' 
-fosterNBLength = 0 #length of station NB Foster
+fosterNBLength = 'temp' #length of station NB Foster
 
 stationids = []
 for key, columns in station_col_fam.get_range():
