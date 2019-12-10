@@ -20,7 +20,7 @@ for key, columns in station_col_fam.get_range():
     stationids.append(key)
 for row in stationids:
     print(row)
-    print(station_col_fam.get(row)
+    print(station_col_fam.get(row))
 
 detectorids = []
 for key, column in detector_col_fam.get_range():
