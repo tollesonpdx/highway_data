@@ -22,6 +22,7 @@ stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
     if columns['locationtext'] == 'Foster NB':
+        print('MATCHED!')
         fosterNBID = key
         fosterNBlength = columns['length']
 # for row in stationids:
