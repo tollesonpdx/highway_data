@@ -16,24 +16,24 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 loop_col_fam = ColumnFamily(pool, 'loopdata')
 
 fosterNBID = '' 
-fosterNBLength = 'temp' #length of station NB Foster
+fosterNBLength = 0 #length of station NB Foster
 
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
     if columns['locationtext'] == 'Foster NB':
         fosterNBID = key
-        fosterNBLength = columns['length']
-# for row in stationids:
-    # print(row)
-    # print(station_col_fam.get(row))
+        fosterNBLength = int(columns['length'])
+for row in stationids:
+    print(row)
+    print(station_col_fam.get(row))
 
 detectorids = []
 for key, columns in detector_col_fam.get_range():
     if columns['stationid'] == fosterNBID:
         detectorids.append(key)
-# for row in detectorids:
-    # print(row)
+for row in detectorids:
+    print(row)
 
 ##############################################################
 #### attempt at using the indexed slice approach ####
@@ -54,13 +54,10 @@ for key, columns in detector_col_fam.get_range():
 ###############################################################
 
 loops = []
-# limit = 4
-# counter = 0
-# for key, column in loop_col_fam.get_range():
+# for key, columns in loop_col_fam.get_range():
+#     if columns['detectorid'] in detectorids:
 #     loops.append(key)
-#     counter += 1
-#     if counter == limit:
-#         break
+    
 
 # length = 0
 # for stationID in stationids:
