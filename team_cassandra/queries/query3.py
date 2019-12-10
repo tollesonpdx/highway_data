@@ -23,6 +23,8 @@ for key, columns in station_col_fam.get_range():
     stationids.append(key)
     if columns['locationtext'] == 'Foster NB':
         print('MATCHED!')
+        print(columns['locationtext'])
+        print(columns['length'])
         fosterNBID = key
         fosterNBlength = columns['length']
 # for row in stationids:
@@ -69,7 +71,6 @@ for key, column in detector_col_fam.get_range():
 
 
 print("it took %s seconds to get data from Cassandra for query 3" % (time.time() - query3_start_time))
-print('')
 
 
 
@@ -77,4 +78,4 @@ print('')
 
 
 pool.dispose()
-print('all done')
+print('all done\n')
