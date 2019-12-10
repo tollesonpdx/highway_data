@@ -87,7 +87,7 @@ for datum in loops:
     # dqflags = dqflags.decode('utf-8')
     occupancy = int(datum['occupancy'])
     # occupancy = occupancy.decode('utf-8')
-    speed = int(datum['speed'])
+    speed = int(datum['speed']) if speed != '' else ''
     # speed = speed.decode('utf-8')
     starttime = datum['starttime']
     status = int(datum['status'])
