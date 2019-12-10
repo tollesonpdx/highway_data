@@ -93,7 +93,7 @@ for datum in loops:
         speed = int(datum['speed'])
     # speed = speed.decode('utf-8')
     starttime = datum['starttime']
-    starttime_b = datetime.datetime.strptime(starttime[:-3], "%Y-%m-%d %H:%M:%S")
+    starttime_b = datetime.strptime(starttime[:-3], "%Y-%m-%d %H:%M:%S")
     status = int(datum['status'])
     # status = status.decode('utf-8')
     volume = int(datum['volume'])
