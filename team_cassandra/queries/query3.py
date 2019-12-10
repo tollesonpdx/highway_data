@@ -4,6 +4,7 @@ from pycassa.columnfamily import ColumnFamily
 from pycassa.index import *
 import csv
 import time
+from datetime import datetime
 
 pool = ConnectionPool('highwaydata', ['10.138.0.5', '10.138.0.4', '10.138.0.3'], use_threadlocal=False, pool_size=3)
 
@@ -92,7 +93,7 @@ for datum in loops:
         speed = int(datum['speed'])
     # speed = speed.decode('utf-8')
     starttime = datum['starttime']
-    starttime_b = datetime(starttime)
+    starttime_b = datetime.datetime.strptime(starttime[:-3], "%Y-%m-%d %H:%M:%S")
     status = int(datum['status'])
     # status = status.decode('utf-8')
     volume = int(datum['volume'])
