@@ -52,7 +52,7 @@ detector_col_fam = ColumnFamily(pool, 'detectors')
 for det in detectorData:
     # print(det)
     detector_col_fam.insert(det['detectorid'],
-            {'highwayid': det['highwayid'], 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':det['detectorclass'],'lanenumber':det['lanenumber'], 'stationid':det['stationid']})
+            {'highwayid': int(det['highwayid']), 'milepost':det['milepost'], 'locationtext':det['locationtext'], 'detectorclass':int(det['detectorclass']),'lanenumber':int(det['lanenumber']), 'stationid':int(det['stationid'])})
 sys.create_index('highwaydata', 'detectors', 'stationid', INT_TYPE)
 sys.create_index('highwaydata', 'detectors', 'locationtext', UTF8_TYPE)
 print('getting info for detector id 1810')
