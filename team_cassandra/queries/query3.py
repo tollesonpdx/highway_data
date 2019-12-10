@@ -106,7 +106,7 @@ while (endtime < datetime.datetime(2011, 9, 23, 0, 0, 0)):
     totalspeed = 0
     totalvolume = 0
     for loop in conv_loops:
-        if (loop['starttime_b'] >= begtime and loop['starttimeb'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
+        if (loop['starttimeb'] >= begtime and loop['starttimeb'] < endtime and loop['speed'] > 5 and loop['speed'] != ''):
             totalspeed += (loop['speed'] * loop['volume'])
             totalvolume += loop['volume']
     avgspeed = totalspeed / totalvolume
