@@ -13,18 +13,28 @@ print('query 3 - getting data from Cassandra')
 
 station_col_fam = ColumnFamily(pool, 'stations')
 detector_col_fam = ColumnFamily(pool, 'detectors')
+loop_col_fam = ColumnFamily(pool, 'loopdata')
 
 stationids = []
 for key, columns in station_col_fam.get_range():
     stationids.append(key)
-for row in stationids:
-    print(row)
+# for row in stationids:
+    # print(row)
 
 detectorids = []
 for key, column in detector_col_fam.get_range():
     detectorids.append(key)
-for row in detectorids:
-        print(row)
+# for row in detectorids:
+        # print(row)
+
+loops = []
+limit = 4
+counter = 0
+for key, column in loop_col_fam.get_range():
+    loops.append(key)
+    counter++
+    if counter == limit:
+        break
 
 length = 0
 # for stationID in stationids:
