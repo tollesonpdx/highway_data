@@ -11,8 +11,9 @@ print('dropping old tables')
 ####################################################
 
 ### sys.drop_column_family('highwaydata', 'stations')
-sys.drop_column_family('highwaydata', 'detectors')
+### sys.drop_column_family('highwaydata', 'detectors')
 ### sys.drop_column_family('highwaydata', 'loopdata')
+sys.drop_column_family('highwaydata', 'loopdata_test')
 
 
 print('dropped them like hot potatoes')

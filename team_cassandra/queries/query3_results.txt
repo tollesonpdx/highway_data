@@ -1,6 +1,5 @@
 
 query run time: Tue Dec 10 23:47:50 2019
-It took 48.6422009468 seconds to get data from Cassandra for query 3
 NB Foster station length: 1.6 miles
 average travel time from 2011-09-22 00:00:00 to 2011-09-22 00:05:00 is 98.0332829047 seconds
 average travel time from 2011-09-22 00:05:00 to 2011-09-22 00:10:00 is 91.9964507542 seconds
@@ -217,5 +216,5 @@ average travel time from 2011-09-22 23:35:00 to 2011-09-22 23:40:00 is 97.150466
 average travel time from 2011-09-22 23:40:00 to 2011-09-22 23:45:00 is 97.0901348474 seconds
 average travel time from 2011-09-22 23:45:00 to 2011-09-22 23:50:00 is 97.6271186441 seconds
 average travel time from 2011-09-22 23:50:00 to 2011-09-22 23:55:00 is 91.8486486486 seconds
-it took 0.532842159271 seconds to analyze data for query 3
-all done
+It took 48.6422009468 seconds to get data from Cassandra for query 3
+It took 0.532842159271 seconds to analyze data for query 3
